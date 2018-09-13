@@ -148,7 +148,11 @@ public class AssignmentsModule4 {
     }
 
     void task_c_1() {
-
+        int[] radii = new int[]{1, 2, 3, 4, 5};
+        for (int i = 0; i < radii.length; i++) {
+            double area = Math.PI * radii[i];    
+            System.out.printf("The area is %.2f with a radius of %d%n",area,radii[i]);
+        }
     }
 
     void task_c_3() {
