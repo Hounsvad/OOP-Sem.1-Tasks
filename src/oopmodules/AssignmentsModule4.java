@@ -179,7 +179,23 @@ public class AssignmentsModule4 {
     }
 
     void task_c_5() {
-
+        boolean found = false;
+        int lastPrime = 0;
+//        long time = System.nanoTime();
+        for (int i = 3; i < 1000000; i += 2) {
+            found = false;
+            for (int j = 2; j < Math.sqrt(i); j++) {
+                if (i % j == 0) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                lastPrime = i;
+            }
+        }
+        System.out.println(lastPrime);
+        //System.out.println(((double) (System.nanoTime() - time)) / 1000000000 + " Seconds");
     }
 
     void task_c_6() {
