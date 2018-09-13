@@ -150,17 +150,32 @@ public class AssignmentsModule4 {
     void task_c_1() {
         int[] radii = new int[]{1, 2, 3, 4, 5};
         for (int i = 0; i < radii.length; i++) {
-            double area = Math.PI * radii[i];    
-            System.out.printf("The area is %.2f with a radius of %d%n",area,radii[i]);
+            double area = Math.PI * radii[i];
+            System.out.printf("The area is %.2f with a radius of %d%n", area, radii[i]);
         }
     }
 
     void task_c_3() {
-
+        double[] dTemp = new double[]{21.5, 23.7, 19.6, 22.5, 25.3, 21.7, 18.9};
+        for (int i = 1; i < dTemp.length; i++) {
+            System.out.println(dTemp[i] - dTemp[i - 1]);
+        }
     }
 
     void task_c_4() {
-
+        int[] month = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        Scanner input = new Scanner(System.in);
+        int userInput;
+        while (true) {
+            System.out.println("Enter a value correlating to a month");
+            if (input.hasNextInt()) {
+                userInput = input.nextInt();
+                if (!(userInput < 1 || userInput > 12)) {
+                    System.out.printf("The number of days in the requested month is %d%n", month[userInput - 1]);
+                    break;
+                }
+            }
+        }
     }
 
     void task_c_5() {
