@@ -248,6 +248,7 @@ public class AssignmentsModule4 {
                 for (int j = 0; j < current[i].length; j++) {
                     int liveNeighbers = 0;
                     if (i != 0 && j != 0 && i != current.length && j != current.length) {
+                        //Testing for all within
                         //Top row
                         liveNeighbers += current[i - 1][j - 1];
                         liveNeighbers += current[i - 1][j];
@@ -259,32 +260,6 @@ public class AssignmentsModule4 {
                         liveNeighbers += current[i + 1][j - 1];
                         liveNeighbers += current[i + 1][j];
                         liveNeighbers += current[i + 1][j + 1];
-                    } else if (i == 0 && j != 0 && i != current.length && j != current.length) {
-                        //Middle row
-                        liveNeighbers += current[i][j - 1];
-                        liveNeighbers += current[i][j + 1];
-                        //Lower row
-                        liveNeighbers += current[i + 1][j - 1];
-                        liveNeighbers += current[i + 1][j];
-                        liveNeighbers += current[i + 1][j + 1];
-                    } else if (i != 0 && j == 0 && i != current.length && j != current.length) {
-                        //Top row
-                        liveNeighbers += current[i - 1][j];
-                        liveNeighbers += current[i - 1][j + 1];
-                        //Middle row
-                        liveNeighbers += current[i][j + 1];
-                        //Lower row
-                        liveNeighbers += current[i + 1][j];
-                        liveNeighbers += current[i + 1][j + 1];
-                    } else if (i != 0 && j != 0 && i != current.length && j == current.length) {
-                        //Top row
-                        liveNeighbers += current[i - 1][j - 1];
-                        liveNeighbers += current[i - 1][j];
-                        //Middle row
-                        liveNeighbers += current[i][j - 1];
-                        //Lower row
-                        liveNeighbers += current[i + 1][j - 1];
-                        liveNeighbers += current[i + 1][j];
                     }
                     if (liveNeighbers > 3 || liveNeighbers < 2) {
                         buffer[i][j] = 0;
