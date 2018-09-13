@@ -30,7 +30,7 @@ public class AssignmentsModule4 {
         while (true) {
             while (true) {
                 for (int i = 0; i < assignments.length; i++) {
-                    System.out.println((i+1)+". "+assignments[i]);
+                    System.out.println((i + 1) + ". " + assignments[i]);
                 }
                 System.out.println("Enter a value equal to the desired task");
                 if (input.hasNext()) {
@@ -57,39 +57,39 @@ public class AssignmentsModule4 {
                         continue;
                 }
             }
-            System.out.printf("---------------------|%-19s %12s|---------------------%n","Start of assignment", assignments[userInputInt-1]);
+            System.out.printf("---------------------|%-19s %12s|---------------------%n", "Start of assignment", assignments[userInputInt - 1]);
             switch (userInputInt) {
                 case 1:
                     task_Liang7_3();
-                    System.out.printf("---------------------|%-19s %12s|---------------------%n","End of assignment", assignments[userInputInt-1]);
+                    System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 case 2:
                     task_Liang8_2();
-                    System.out.printf("---------------------|%-19s %12s|---------------------%n","End of assignment", assignments[userInputInt-1]);
+                    System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 case 3:
                     task_c_1();
-                    System.out.printf("---------------------|%-19s %12s|---------------------%n","End of assignment", assignments[userInputInt-1]);
+                    System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 case 4:
                     task_c_3();
-                    System.out.printf("---------------------|%-19s %12s|---------------------%n","End of assignment", assignments[userInputInt-1]);
+                    System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 case 5:
                     task_c_4();
-                    System.out.printf("---------------------|%-19s %12s|---------------------%n","End of assignment", assignments[userInputInt-1]);
+                    System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 case 6:
                     task_c_5();
-                    System.out.printf("---------------------|%-19s %12s|---------------------%n","End of assignment", assignments[userInputInt-1]);
+                    System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 case 7:
                     task_c_6();
-                    System.out.printf("---------------------|%-19s %12s|---------------------%n","End of assignment", assignments[userInputInt-1]);
+                    System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 case 8:
                     task_c_7();
-                    System.out.printf("---------------------|%-19s %12s|---------------------%n","End of assignment", assignments[userInputInt-1]);
+                    System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 default:
                     continue;
@@ -101,10 +101,10 @@ public class AssignmentsModule4 {
         /*  Write a program that reads the integers between 
             1 and 50 and counts the occurrences of each. Assume the input ends with 0.
          */
-        
+
         //Initaiate object instances
         Scanner input = new Scanner(System.in);
-        
+
         //Define variables
         int userInput;
         int[] count = new int[50];
@@ -112,21 +112,41 @@ public class AssignmentsModule4 {
         System.out.println("Enter a list of numbers smaller than 50 and latger than 0 seperated by space and end the list with a 0");
         System.out.print("Enter list here: ");
         while (true) {
-            userInput = input.nextInt();
-            if (userInput != 0) {
-                count[userInput-1] += 1;
-            }else{
-                break;
+            if (input.hasNextInt()) {
+                userInput = input.nextInt();
+                if (userInput != 0) {
+                    count[userInput - 1] += 1;
+                } else {
+                    break;
+                }
             }
         }
         for (int i = 0; i < count.length; i++) {
-            if(count[i]>0){
-                System.out.printf("[%d] Occurs %d times",(i+1),count[i]);
+            if (count[i] > 0) {
+                System.out.printf("[%d] Occurs %d times%n", (i + 1), count[i]);
             }
         }
     }
 
     void task_Liang8_2() {
+        Scanner input = new Scanner(System.in);
+        double average = 0;
+        double userInput;
+        double[][] matrix = new double[4][4];
+        String[] xLine = new String[]{"first", "second", "third", "fourth"};
+
+        System.out.println("Enter four lines of four numbers");
+        for (int i = 0; i < 4; i++) {
+            System.out.printf("Enter the %s line :", xLine[i]);
+            for (int j = 0; j < 4; j++) {
+                matrix[i][j] = input.nextInt();
+            }
+        }
+        for (int i = 0; i < 4; i++) {
+            average += matrix[i][i];
+        }
+        average = average / 4;
+        System.out.println("Average of the elements in the major diagonal is " + average);
 
     }
 
