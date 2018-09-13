@@ -131,10 +131,8 @@ public class AssignmentsModule4 {
     void task_Liang8_2() {
         Scanner input = new Scanner(System.in);
         double average = 0;
-        double userInput;
         double[][] matrix = new double[4][4];
         String[] xLine = new String[]{"first", "second", "third", "fourth"};
-
         System.out.println("Enter four lines of four numbers");
         for (int i = 0; i < 4; i++) {
             System.out.printf("Enter the %s line :", xLine[i]);
@@ -147,7 +145,6 @@ public class AssignmentsModule4 {
         }
         average = average / 4;
         System.out.println("Average of the elements in the major diagonal is " + average);
-
     }
 
     void task_c_1() {
