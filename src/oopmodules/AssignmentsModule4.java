@@ -6,6 +6,8 @@
 package oopmodules;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -92,7 +94,7 @@ public class AssignmentsModule4 {
                     System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 default:
-                    continue;
+                    
             }
         }
     }
@@ -179,7 +181,7 @@ public class AssignmentsModule4 {
     }
 
     void task_c_5() {
-        boolean found = false;
+        boolean found;
         int lastPrime = 0;
 //        long time = System.nanoTime();
         for (int i = 3; i < 1000000; i += 2) {
@@ -290,9 +292,7 @@ public class AssignmentsModule4 {
             }
             //System.out.println("End of for");
             for (int i = 0; i < current.length; i++) {
-                for (int j = 0; j < current[i].length; j++) {
-                    current[i][j] = buffer[i][j];
-                }
+                System.arraycopy(buffer[i], 0, current[i], 0, current[i].length);
             }
             for (int i = 0; i < current.length; i++) {
                 for (int j = 0; j < current[i].length; j++) {
@@ -300,8 +300,10 @@ public class AssignmentsModule4 {
                 }
                 System.out.printf("%n");
             }
-            for (int i = 0; i < Integer.MAX_VALUE; i++) {
-                
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(AssignmentsModule4.class.getName()).log(Level.SEVERE, null, ex);
             }
             System.out.println("");
         }
