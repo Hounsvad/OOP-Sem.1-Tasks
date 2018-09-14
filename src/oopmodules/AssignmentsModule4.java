@@ -247,20 +247,40 @@ public class AssignmentsModule4 {
             for (int i = 0; i < current.length; i++) {
                 for (int j = 0; j < current[i].length; j++) {
                     int liveNeighbers = 0;
-                    if (i != 0 && j != 0 && i != current.length && j != current.length) {
-                        //Testing for all within
-                        //Top row
+                    //System.out.printf("i: %d j: %d  iLenghth: %d jLength: %d%n", i, j, current.length, current[i].length);
+                    if (i != 0 && j != 0) {
+                        //Top left
                         liveNeighbers += current[i - 1][j - 1];
+                    }
+                    if (i != 0) {
+                        //Top mid
                         liveNeighbers += current[i - 1][j];
+                    }
+                    if (i > 0 && j < (current[i].length-1)) {
+                        //Top right
                         liveNeighbers += current[i - 1][j + 1];
-                        //Middle row
+                    }
+                    if (j != 0) {
+                        //Left
                         liveNeighbers += current[i][j - 1];
+                    }
+                    if (j < (current[i].length-1)) {
+                        //Right
                         liveNeighbers += current[i][j + 1];
-                        //Lower row
+                    }
+                    if (i < (current.length-1) && j != 0) {
+                        //Lower left
                         liveNeighbers += current[i + 1][j - 1];
+                    }
+                    if (i < (current.length-1)) {
+                        //Lower mid
                         liveNeighbers += current[i + 1][j];
+                    }
+                    if (i < (current.length-1) && j < (current[i].length-1)) {
+                        //Lower right
                         liveNeighbers += current[i + 1][j + 1];
                     }
+                    //System.out.println("Live Neighbers " + liveNeighbers);
                     if (liveNeighbers > 3 || liveNeighbers < 2) {
                         buffer[i][j] = 0;
                     } else if (liveNeighbers == 3 || liveNeighbers == 2) {
@@ -268,6 +288,7 @@ public class AssignmentsModule4 {
                     }
                 }
             }
+            //System.out.println("End of for");
             for (int i = 0; i < current.length; i++) {
                 for (int j = 0; j < current[i].length; j++) {
                     current[i][j] = buffer[i][j];
@@ -277,8 +298,9 @@ public class AssignmentsModule4 {
                 for (int j = 0; j < current[i].length; j++) {
                     System.out.printf("%d", current[i][j]);
                 }
-                System.out.print("%n");
+                System.out.printf("%n");
             }
+            System.out.println("");
         }
     }
 }
