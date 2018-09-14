@@ -300,6 +300,9 @@ public class AssignmentsModule4 {
                 }
                 System.out.printf("%n");
             }
+            for (int i = 0; i < Integer.MAX_VALUE; i++) {
+                
+            }
             System.out.println("");
         }
     }
