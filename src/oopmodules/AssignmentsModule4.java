@@ -285,7 +285,9 @@ public class AssignmentsModule4 {
                     //System.out.println("Live Neighbers " + liveNeighbers);
                     if (liveNeighbers > 3 || liveNeighbers < 2) {
                         buffer[i][j] = 0;
-                    } else if (liveNeighbers == 3 || liveNeighbers == 2) {
+                    } else if (liveNeighbers == 3) {
+                        buffer[i][j] = 1;
+                    } else if (liveNeighbers == 2 && current[i][j] == 1){
                         buffer[i][j] = 1;
                     }
                 }
