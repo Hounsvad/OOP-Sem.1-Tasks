@@ -139,17 +139,35 @@ public class AssignmentsModule5 {
     void task_Liang6_22() {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter an integer value: ");
-        if(input.hasNextLong()){
+        if (input.hasNextLong()) {
             System.out.println("The square root is " + sqrt(input.nextLong()));
         }
     }
 
     void task_Liang6_25() {
-
+        Scanner input = new Scanner(System.in);
+        while (true) {
+            System.out.print("Enter an integer value: ");
+            if (input.hasNextLong()) {
+                System.out.println(convertMillis(input.nextLong()));
+                break;
+            } else {
+                input.next();
+            }
+        }
     }
 
     void task_Liang6_28() {
-
+        Scanner input = new Scanner(System.in);
+        while (true) {
+            System.out.print("Enter an integer value: ");
+            if (input.hasNextInt()) {
+                System.out.println(mersennePrime(input.nextInt()));
+                break;
+            } else {
+                input.next();
+            }
+        }
     }
 
     void task_d_2() {
@@ -228,6 +246,50 @@ public class AssignmentsModule5 {
             //System.out.printf("lastGuess: %.5f nextGuess: %.5f%n",lastGuess, nextGuess);
         } while (Math.abs(nextGuess - lastGuess) > 0.0000000000001);
         result = lastGuess;
+        return result;
+    }
+
+    public String convertMillis(long millis) {
+        String results = null;
+        long hours = millis / 3600000;
+        long minutes = (millis % 3600000) / 60000;
+        long seconds = ((millis % 3600000) % 60000) / 1000;
+        results = String.format("%d:%d:%d", hours, minutes, seconds);
+        return results;
+    }
+
+    public int[] mersennePrime(int n) {
+
+        boolean[] tests = new boolean[n];
+        int numberOfPrimes = 0;
+        for (int i = 2; i <= n; i++) {
+            boolean found = false;
+            for (int j = 2; j <= Math.sqrt(Math.pow(2, i) - 1); j++) {
+                if (j % (Math.pow(2, i) - 1) == 0) {
+                    found = true;
+                }
+
+            }
+            if (found != true) {
+                tests[i-2] = true;
+            }
+        }
+        for(boolean x:tests){
+            if(x == true){
+                numberOfPrimes++;
+            }
+        }
+        int[] result = new int[numberOfPrimes];
+        for(int x : result){
+            for(int i = 0; i < tests.length; i++){
+                if(tests[i] == true){
+                    tests[i] = false;
+                    x = i+2;
+                    System.out.printf("x: %d mp: %d%n",x,(int)(Math.pow(2, i) - 1));
+                    break;
+                }
+            }
+        }
         return result;
     }
 
