@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  */
 public class AssignmentsModule4 {
 
-    public void assignemtStarter() {
+    public void assignmentStarter() {
         Scanner input = new Scanner(System.in);
         int userInputInt = -0;
         String userInputString = "";

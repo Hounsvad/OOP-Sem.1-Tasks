@@ -21,7 +21,7 @@ public class AssignmentManager {
         AssignmentsModule5 modul5 = new AssignmentsModule5();
         
         //Calling Assignments
-        modul4.assignemtStarter();
+        //modul4.assignmentStarter();
         modul5.assignmentStarter();
     }
     
