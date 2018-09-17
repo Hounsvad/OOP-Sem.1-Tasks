@@ -150,12 +150,7 @@ public class AssignmentsModule4 {
     }
 
     void task_c_1() {
-        int[] radii = new int[]{
-            1,
-            2,
-            3, 
-            4,
-            5};
+        int[] radii = new int[]{1, 2, 3, 4, 5};
         for (int i = 0; i < radii.length; i++) {
             double area = Math.PI * radii[i];
             System.out.printf("The area is %.2f with a radius of %d%n", area, radii[i]);
@@ -290,7 +285,9 @@ public class AssignmentsModule4 {
                     //System.out.println("Live Neighbers " + liveNeighbers);
                     if (liveNeighbers > 3 || liveNeighbers < 2) {
                         buffer[i][j] = 0;
-                    } else if (liveNeighbers == 3 || liveNeighbers == 2) {
+                    } else if (liveNeighbers == 3) {
+                        buffer[i][j] = 1;
+                    } else if (liveNeighbers == 2 && current[i][j] == 1){
                         buffer[i][j] = 1;
                     }
                 }
