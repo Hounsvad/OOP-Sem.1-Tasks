@@ -203,11 +203,14 @@ public class AssignmentsModule4 {
     void task_c_6() {
         double[] inputArray = new double[]{22.0, 23.5, 55.0, 95.0};
         double highest = 0;
+        int highestI = 0;
         for (int i = 0; i < inputArray.length; i++) {
             if (inputArray[i] < highest) {
                 highest = inputArray[i];
+                highestI = i;
             }
         }
+        System.out.println("The highest ");
     }
 
     void task_c_7() {
@@ -303,7 +306,7 @@ public class AssignmentsModule4 {
                 System.out.printf("%n");
             }
             try {
-                Thread.sleep(5000);
+                Thread.sleep(500);
             } catch (InterruptedException ex) {
                 Logger.getLogger(AssignmentsModule4.class.getName()).log(Level.SEVERE, null, ex);
             }
