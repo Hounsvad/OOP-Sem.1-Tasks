@@ -5,6 +5,7 @@
  */
 package oopmodules;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -116,15 +117,31 @@ public class AssignmentsModule5 {
     }
 
     void task_Liang6_3() {
-
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter an integer value: ");
+        if (input.hasNextInt()) {
+            System.out.printf("The input is%s a palindrome%n", (isPalindrome(input.nextInt())) ? "" : " not");
+        }
     }
 
     void task_Liang6_8() {
-
+        double mile = 1;
+        double kilometer = 20;
+        System.out.printf("%-20s%-20s|%20s%20s%n", "Miles", "Kilometers", "Kilometers", "Miles");
+        System.out.println("_________________________________________________________________________________");
+        while (mile <= 10) {
+            System.out.printf("%-20.2f%-20.2f|%20.2f%20.2f%n", mile, mileToKilometer(mile), kilometer, kilometerToMile(kilometer));
+            mile += 1;
+            kilometer += 5;
+        }
     }
 
     void task_Liang6_22() {
-
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter an integer value: ");
+        if(input.hasNextLong()){
+            System.out.println("The square root is " + sqrt(input.nextLong()));
+        }
     }
 
     void task_Liang6_25() {
@@ -163,6 +180,54 @@ public class AssignmentsModule5 {
             //Alternativly
             //result += val - '0';
         }
+        return result;
+    }
+
+    public int reverse(int number) {
+        int result = 0;
+        char[] numberInput = Integer.toString(number).toCharArray();
+        char[] numberOutput = new char[numberInput.length];
+        String numberOutputString = "";
+        for (int i = 0; i < numberOutput.length; i++) {
+            numberOutput[i] = numberInput[numberInput.length - i - 1];
+        }
+        for (char x : numberOutput) {
+            numberOutputString += x;
+        }
+        result = Integer.parseInt(numberOutputString);
+        return result;
+    }
+
+    public boolean isPalindrome(int number) {
+        boolean result = false;
+        if (number == reverse(number)) {
+            result = true;
+        }
+        return result;
+    }
+
+    public double mileToKilometer(double mile) {
+        double result = 0;
+        result = mile * 1.6;
+        return result;
+    }
+
+    public double kilometerToMile(double kilometer) {
+        double result = 0;
+        result = kilometer / 1.6;
+        return result;
+    }
+
+    public double sqrt(long n) {
+        double result = 0;
+        double lastGuess = n;
+        double nextGuess = n;
+        do {
+            lastGuess = nextGuess;
+            nextGuess = (lastGuess + (n / lastGuess)) / 2;
+            //System.out.printf("lastGuess: %.5f nextGuess: %.5f%n",lastGuess, nextGuess);
+        } while (Math.abs(nextGuess - lastGuess) > 0.0000000000001);
+        result = lastGuess;
         return result;
     }
 
