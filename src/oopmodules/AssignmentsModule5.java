@@ -18,14 +18,16 @@ public class AssignmentsModule5 {
         int userInputInt = -0;
         String userInputString = "";
         String[] assignments = new String[]{
-            "Liang 7.3",
-            "Liang 8.2",
-            "Opgave c.1",
-            "Opgave c.3",
-            "Opgave c.4",
+            "Liang 6.2",
+            "Liang 6.3",
+            "Liang 6.8",
+            "Liang 6.22",
+            "Liang 6.25",
+            "Liang 6.28",
+            "Opgave c.2",
             "Opgave c.5",
-            "Opgave c.6",
-            "Opgave c.7"
+            "Opgave c.7",
+            "Opgave c.8"
         };
         while (true) {
             while (true) {
