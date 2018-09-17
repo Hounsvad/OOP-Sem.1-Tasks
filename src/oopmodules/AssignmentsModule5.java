@@ -250,7 +250,7 @@ public class AssignmentsModule5 {
     }
 
     public String convertMillis(long millis) {
-        String results = null;
+        String results;
         long hours = millis / 3600000;
         long minutes = (millis % 3600000) / 60000;
         long seconds = ((millis % 3600000) % 60000) / 1000;
