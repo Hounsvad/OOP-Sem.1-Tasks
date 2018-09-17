@@ -306,7 +306,7 @@ public class AssignmentsModule4 {
                 System.out.printf("%n");
             }
             try {
-                Thread.sleep(500);
+                Thread.sleep(5000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(AssignmentsModule4.class.getName()).log(Level.SEVERE, null, ex);
             }

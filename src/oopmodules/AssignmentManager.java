@@ -16,8 +16,13 @@ public class AssignmentManager {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        //Instantiating assignments
         AssignmentsModule4 modul4 = new AssignmentsModule4();
+        AssignmentsModule5 modul5 = new AssignmentsModule5();
+        
+        //Calling Assignments
         modul4.assignemtStarter();
+        modul5.assignmentStarter();
     }
     
 }
