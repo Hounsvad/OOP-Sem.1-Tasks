@@ -94,7 +94,7 @@ public class AssignmentsModule4 {
                     System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 default:
-                    
+
             }
         }
     }
@@ -210,7 +210,7 @@ public class AssignmentsModule4 {
                 highestI = i;
             }
         }
-        System.out.println("The highest ");
+        System.out.printf("The highest value is %.2f and the index is %d%n", highest, highestI);
     }
 
     void task_c_7() {
@@ -261,7 +261,7 @@ public class AssignmentsModule4 {
                         //Top mid
                         liveNeighbers += current[i - 1][j];
                     }
-                    if (i > 0 && j < (current[i].length-1)) {
+                    if (i > 0 && j < (current[i].length - 1)) {
                         //Top right
                         liveNeighbers += current[i - 1][j + 1];
                     }
@@ -269,19 +269,19 @@ public class AssignmentsModule4 {
                         //Left
                         liveNeighbers += current[i][j - 1];
                     }
-                    if (j < (current[i].length-1)) {
+                    if (j < (current[i].length - 1)) {
                         //Right
                         liveNeighbers += current[i][j + 1];
                     }
-                    if (i < (current.length-1) && j != 0) {
+                    if (i < (current.length - 1) && j != 0) {
                         //Lower left
                         liveNeighbers += current[i + 1][j - 1];
                     }
-                    if (i < (current.length-1)) {
+                    if (i < (current.length - 1)) {
                         //Lower mid
                         liveNeighbers += current[i + 1][j];
                     }
-                    if (i < (current.length-1) && j < (current[i].length-1)) {
+                    if (i < (current.length - 1) && j < (current[i].length - 1)) {
                         //Lower right
                         liveNeighbers += current[i + 1][j + 1];
                     }
@@ -290,7 +290,7 @@ public class AssignmentsModule4 {
                         buffer[i][j] = 0;
                     } else if (liveNeighbers == 3) {
                         buffer[i][j] = 1;
-                    } else if (liveNeighbers == 2 && current[i][j] == 1){
+                    } else if (liveNeighbers == 2 && current[i][j] == 1) {
                         buffer[i][j] = 1;
                     }
                 }
