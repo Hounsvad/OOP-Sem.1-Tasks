@@ -12,7 +12,9 @@ import java.util.Scanner;
  * @author Hounsvad
  */
 public class AssignmentsModule5 {
-
+/**
+ * An assignment handler that runs the user requested task
+ */
     public void assignmentStarter() {
         Scanner input = new Scanner(System.in);
         int userInputInt = -0;
@@ -228,6 +230,12 @@ public class AssignmentsModule5 {
         System.out.println("The suduko yeilds " + (sudukoTest(suduku) ? "True" : "false"));
     }
 
+    /**
+     * Takes an integer, and sums all the digits in the integer
+     *
+     * @param n A positive integer with at max size of Long.MaxSize
+     * @return Sum of digits in the input integer
+     */
     public int sumDigits(long n) {
         int result = 0;
         for (char val : Long.toString(n).toCharArray()) {
@@ -238,6 +246,13 @@ public class AssignmentsModule5 {
         return result;
     }
 
+    /**
+     * Takes a positive integer with a max size of Integer.MIN_VALUE and
+     * reverses the digits
+     *
+     * @param number Positive integer with a max size of Integer.MAX_VALUE
+     * @return Reverse of the input
+     */
     public int reverse(int number) {
         int result = 0;
         char[] numberInput = Integer.toString(number).toCharArray();
@@ -253,6 +268,13 @@ public class AssignmentsModule5 {
         return result;
     }
 
+    /**
+     * Checks if an integer value is a palindrome, and returns a boolean based
+     * on this
+     *
+     * @param number {@literal Integer <= Integer.MAX_VALUE}
+     * @return Bool of answer
+     */
     public boolean isPalindrome(int number) {
         boolean result = false;
         if (number == reverse(number)) {
@@ -261,18 +283,36 @@ public class AssignmentsModule5 {
         return result;
     }
 
+    /**
+     * Converts miles to kilometre
+     *
+     * @param mile A double value of miles
+     * @return A double value of resulting kilometres
+     */
     public double mileToKilometer(double mile) {
         double result = 0;
         result = mile * 1.6;
         return result;
     }
 
+    /**
+     * Converts kilometres to miles
+     *
+     * @param kilometer A double value of kilometres
+     * @return A double value of the resulting miles
+     */
     public double kilometerToMile(double kilometer) {
         double result = 0;
         result = kilometer / 1.6;
         return result;
     }
 
+    /**
+     * Finds the approximate square root of the input
+     *
+     * @param n Positive integer value smaller than Long.MAX_VALUE
+     * @return Approximate square root of n
+     */
     public double sqrt(long n) {
         double result = 0;
         double lastGuess = n;
@@ -286,15 +326,25 @@ public class AssignmentsModule5 {
         return result;
     }
 
-    public String convertMillis(long millis) {
+    /**
+     * Convertes milliseconds to a string of Hours:Minutes:Seconds
+     *
+     * @param millis An input in milliseconds smaller than Long.MAX_VALUE
+     * @return A string of Hours:Minutes:Seconds based on millis
+     */
+    public String convertMillis(long millis) { //returns a string of Hours:Minutes:Seconds
         String results;
-        long hours = millis / 3600000;
-        long minutes = (millis % 3600000) / 60000;
-        long seconds = ((millis % 3600000) % 60000) / 1000;
+        long hours = millis / 3600000; //Extracting the whole numbner of hours
+        long minutes = (millis % 3600000) / 60000; //Extracting the whole numbner of minutes
+        long seconds = ((millis % 3600000) % 60000) / 1000; //Extracting the whole numbner of seconds
         results = String.format("%d:%d:%d", hours, minutes, seconds);
         return results;
     }
-
+/**
+ * Returns an array containing all mersennePrimes smaller than or equal to n
+ * @param n Largest number to check for mersennePrimes
+ * @return Array of mersennePrimes smaller than or queal to n
+ */
     public int[] mersennePrime(int n) {
         //Returns array containing testet p values resulting in a prime
 
@@ -322,13 +372,21 @@ public class AssignmentsModule5 {
         }
         return result;
     }
-
+/**
+ * Returns the circumference of a circle based on the radius
+ * @param radius Radius of the circle
+ * @return Circumference of the circle
+ */
     public double circleCircumference(double radius) {
         double result = 2 * radius * Math.PI;
         return result;
     }
-
-    public boolean isPrime(double candidate) {
+/**
+ * Returns whether of not the input is a prime
+ * @param candidate A number to be tested for whether or not it is prime
+ * @return Boolean based on whether or not candidate is a prime
+ */
+    public boolean isPrime(int candidate) {
         boolean result = true;
         for (int i = 2; i < Math.sqrt(candidate); i++) {
             if (candidate % i == 0) {
@@ -338,7 +396,12 @@ public class AssignmentsModule5 {
         }
         return result;
     }
-
+    /**
+     * Returns a list of primes within the specified inclusive range
+     * @param start The smallest number to check
+     * @param finish The largest number to check
+     * @return An array of primes within the specified range
+     */
     public int[] primes(int start, int finish) {
         int primeCount = 0;
         boolean[] testedPrimes = new boolean[finish - start];
@@ -361,7 +424,11 @@ public class AssignmentsModule5 {
         }
         return foundPrimes;
     }
-
+/**
+ * Tests if a 9*9 jagged array is a valid suduko solution
+ * @param suduko A 9*9 int jagged array
+ * @return Boolean based on the validity of the input
+ */
     public boolean sudukoTest(int[][] suduko) {
         boolean result = true;
         int[] val = new int[9];
