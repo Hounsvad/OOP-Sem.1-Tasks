@@ -59,6 +59,8 @@ public class AssignmentsModule5 {
                     default:
                         continue;
                 }
+            }else if (userInputInt > assignments.length){
+                continue;
             }
             System.out.printf("---------------------|%-19s %12s|---------------------%n", "Start of assignment", assignments[userInputInt - 1]);
             switch (userInputInt) {
@@ -264,31 +266,37 @@ public class AssignmentsModule5 {
         int numberOfPrimes = 0;
         for (int i = 2; i <= n; i++) {
             boolean found = false;
-            for (int j = 2; j <= Math.sqrt(Math.pow(2, i) - 1); j++) {
-                if (j % (Math.pow(2, i) - 1) == 0) {
+            long testedPrime = (long)Math.pow(2, i) - 1;
+            System.out.println("TestedPrime: " + testedPrime);
+            for (long j = 2; j <= Math.sqrt(testedPrime) || j < 5; j++) {
+                if (testedPrime % j == 0) {
+                    //System.out.println("devisor found at " + j);
                     found = true;
                 }
 
             }
             if (found != true) {
-                tests[i-2] = true;
+                tests[i - 2] = true;
+                System.out.println("Prime found at " + (i));
             }
         }
-        for(boolean x:tests){
-            if(x == true){
+        for (boolean x : tests) {
+            if (x == true) {
                 numberOfPrimes++;
             }
         }
         int[] result = new int[numberOfPrimes];
-        for(int x : result){
-            for(int i = 0; i < tests.length; i++){
-                if(tests[i] == true){
+        for (int j = 0;j<result.length; j++) {
+            for (int i = 0; i < tests.length; i++) {
+                if (tests[i] == true) {
                     tests[i] = false;
-                    x = i+2;
-                    System.out.printf("x: %d mp: %d%n",x,(int)(Math.pow(2, i) - 1));
+                    result[j] = i + 2;
                     break;
                 }
             }
+        }
+        for(int i : result){
+            System.out.println(i+ ": is in results");
         }
         return result;
     }
