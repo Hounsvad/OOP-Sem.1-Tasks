@@ -25,10 +25,10 @@ public class AssignmentsModule5 {
             "Liang 6.22",
             "Liang 6.25",
             "Liang 6.28",
-            "Opgave c.2",
-            "Opgave c.5",
-            "Opgave c.7",
-            "Opgave c.8"
+            "Opgave D.2",
+            "Opgave D.5",
+            "Opgave D.7(WIP)",
+            "Opgave D.8"
         };
         while (true) {
             while (true) {
@@ -209,7 +209,24 @@ public class AssignmentsModule5 {
 
     void task_d_8() {
         // Skriv en metode der givet et 9x9 array af heltal bestemmer (via en boolsk returværdi) om der er tale om en gyldig Sudoku løsning, og skriv et program der benytter denne.
-        
+        int[][] suduku = new int[][]{
+            {7, 3, 5, 6, 1, 4, 8, 9, 2},
+            {8, 4, 2, 9, 7, 3, 5, 6, 1},
+            {9, 6, 1, 2, 8, 5, 3, 7, 4},
+            {2, 8, 6, 3, 4, 9, 1, 5, 7},
+            {4, 3, 1, 8, 5, 7, 9, 2, 6},
+            {5, 7, 9, 1, 2, 6, 4, 3, 8},
+            {1, 5, 7, 4, 9, 2, 6, 8, 3},
+            {6, 9, 4, 7, 3, 8, 2, 1, 5},
+            {3, 2, 8, 5, 6, 1, 7, 4, 9}
+        };
+        for (int i = 0; i < suduku.length; i++) {
+            for (int j = 0; j < suduku.length; j++) {
+                System.out.printf((j == 0 ? "" : " ") + suduku[i][j]);
+            }
+            System.out.printf("%n");
+        }
+        System.out.println("The suduko yeilds " + (sudukoTest(suduku) ? "True" : "false"));
     }
 
     public int sumDigits(long n) {
@@ -345,9 +362,39 @@ public class AssignmentsModule5 {
         }
         return foundPrimes;
     }
-    public boolean sudukoTest(int[][] suduko){
-        boolean result = false;
-        
+
+    public boolean sudukoTest(int[][] suduko) {
+        boolean result = true;
+        int[] val = new int[9];
+
+        //Testing vertical 
+        for (int j = 0; j < suduko.length; j++) {
+            for (int i = 0; i < suduko.length; i++) {
+                val[suduko[i][j] - 1]++;
+            }
+        }
+        //Testing horisontal
+        for (int j = 0; j < suduko.length; j++) {
+            for (int i = 0; i < suduko.length; i++) {
+                val[suduko[j][i] - 1]++;
+            }
+        }
+        //Testing squares
+        for (int i = 0; i <= 6; i += 3) {
+            for (int j = 0; j <= 6; j += 3) {
+                for (int k = 0; k < 3; k++) {
+                    for (int l = 0; l < 3; l++) {
+                        val[suduko[i + k][j + l] - 1]++;
+                    }
+                }
+            }
+        }
+        //checking suduko
+        for (int x : val) {
+            if (x != 27) {
+                result = false;
+            }
+        }
         return result;
     }
 
