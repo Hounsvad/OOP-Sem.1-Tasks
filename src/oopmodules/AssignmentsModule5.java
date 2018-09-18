@@ -59,7 +59,7 @@ public class AssignmentsModule5 {
                     default:
                         continue;
                 }
-            }else if (userInputInt > assignments.length){
+            } else if (userInputInt > assignments.length) {
                 continue;
             }
             System.out.printf("---------------------|%-19s %12s|---------------------%n", "Start of assignment", assignments[userInputInt - 1]);
@@ -164,7 +164,14 @@ public class AssignmentsModule5 {
         while (true) {
             System.out.print("Enter an integer value: ");
             if (input.hasNextInt()) {
-                System.out.println(mersennePrime(input.nextInt()));
+                int[] primesCandidates = mersennePrime(input.nextInt());
+                System.out.println("A list of mersenne primes and their p value");
+                System.out.printf("%-20s%-20s%n", "p", "2^p – 1");
+                System.out.println("________________________________________");
+                for (int x : primesCandidates) {
+                    System.out.printf("%-20d%-20d%n", x, (long) (Math.pow(2, x) - 1));
+                }
+
                 break;
             } else {
                 input.next();
@@ -261,42 +268,38 @@ public class AssignmentsModule5 {
     }
 
     public int[] mersennePrime(int n) {
+        //Returns array containing testet p values resulting in a prime
+        
+        
+        boolean[] tests = new boolean[n]; //Contains whether or not an index + 2 contains a mersenne prime candidate
+        int numberOfPrimes = 0; //Describes how many prime candidates were found
 
-        boolean[] tests = new boolean[n];
-        int numberOfPrimes = 0;
-        for (int i = 2; i <= n; i++) {
+        
+        for (int i = 2; i <= n; i++) { //Looping thru all possible candidates within the limit
             boolean found = false;
-            long testedPrime = (long)Math.pow(2, i) - 1;
-            System.out.println("TestedPrime: " + testedPrime);
-            for (long j = 2; j <= Math.sqrt(testedPrime) || j < 5; j++) {
-                if (testedPrime % j == 0) {
-                    //System.out.println("devisor found at " + j);
+            long testedPrime = (long) Math.pow(2, i) - 1; //Indicates the mersenne prime to be tested
+            for (long j = 2; j <= Math.sqrt(testedPrime); j++) { // testing all numbers against the mersenne prime candidate
+                if (testedPrime % j == 0) {// if a devisor is found the loop breaks and the candidate is discarded
                     found = true;
-                }
-
-            }
-            if (found != true) {
-                tests[i - 2] = true;
-                System.out.println("Prime found at " + (i));
-            }
-        }
-        for (boolean x : tests) {
-            if (x == true) {
-                numberOfPrimes++;
-            }
-        }
-        int[] result = new int[numberOfPrimes];
-        for (int j = 0;j<result.length; j++) {
-            for (int i = 0; i < tests.length; i++) {
-                if (tests[i] == true) {
-                    tests[i] = false;
-                    result[j] = i + 2;
                     break;
                 }
+
+            }
+            if (found != true) { // if no devisor is found indicate that this is a true mersenne prime candidate
+                tests[i - 2] = true;
+                numberOfPrimes++; // increment the number of primes found
             }
         }
-        for(int i : result){
-            System.out.println(i+ ": is in results");
+        int[] result = new int[numberOfPrimes]; //Declaring the results array
+        
+        for (int i = 0; i < result.length; i++) { //looping thru the results array
+            for (int j = 0; j < tests.length; j++) {//looping thru the tests array
+                if (tests[j] == true) {// if the test resulted in a true mersenne prime
+                    tests[j] = false; // remove said prime from the list
+                    result[i] = j + 2; // add the index of test + 2( to give the mersenne prime candidate) to the results list
+                    break; // break loop so as not to override
+                }
+            }
         }
         return result;
     }
