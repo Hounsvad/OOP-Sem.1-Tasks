@@ -181,6 +181,13 @@ public class AssignmentsModule5 {
 
     void task_d_2() {
         //Skriv et program, der udregner omkredsen (2*π*r) af 2 cirkler med radius 3 hhv. 7, og udskriver summen af disse.
+        double sum = 0;
+        double[] radii = new double[]{3, 7};
+        for (double object : radii) {
+            sum += circleCircumference(object);
+        }
+        System.out.println("The sum of the circumferre is " + sum);
+
     }
 
     void task_d_5() {
@@ -189,6 +196,10 @@ public class AssignmentsModule5 {
             public static void init ()
             public static boolean isPrime(int potential)
          */
+        System.out.println("List of primes between 100 and 200");
+        for (int i : primes(100, 200)) {
+            System.out.println(i);
+        }
 
     }
 
@@ -198,6 +209,7 @@ public class AssignmentsModule5 {
 
     void task_d_8() {
         // Skriv en metode der givet et 9x9 array af heltal bestemmer (via en boolsk returværdi) om der er tale om en gyldig Sudoku løsning, og skriv et program der benytter denne.
+        
     }
 
     public int sumDigits(long n) {
@@ -269,29 +281,20 @@ public class AssignmentsModule5 {
 
     public int[] mersennePrime(int n) {
         //Returns array containing testet p values resulting in a prime
-        
-        
+
         boolean[] tests = new boolean[n]; //Contains whether or not an index + 2 contains a mersenne prime candidate
         int numberOfPrimes = 0; //Describes how many prime candidates were found
 
-        
         for (int i = 2; i <= n; i++) { //Looping thru all possible candidates within the limit
-            boolean found = false;
             long testedPrime = (long) Math.pow(2, i) - 1; //Indicates the mersenne prime to be tested
-            for (long j = 2; j <= Math.sqrt(testedPrime); j++) { // testing all numbers against the mersenne prime candidate
-                if (testedPrime % j == 0) {// if a devisor is found the loop breaks and the candidate is discarded
-                    found = true;
-                    break;
-                }
-
-            }
-            if (found != true) { // if no devisor is found indicate that this is a true mersenne prime candidate
+            if (isPrime(testedPrime) == true) { // if no devisor is found indicate that this is a true mersenne prime candidate
                 tests[i - 2] = true;
                 numberOfPrimes++; // increment the number of primes found
             }
         }
+
         int[] result = new int[numberOfPrimes]; //Declaring the results array
-        
+
         for (int i = 0; i < result.length; i++) { //looping thru the results array
             for (int j = 0; j < tests.length; j++) {//looping thru the tests array
                 if (tests[j] == true) {// if the test resulted in a true mersenne prime
@@ -301,6 +304,50 @@ public class AssignmentsModule5 {
                 }
             }
         }
+        return result;
+    }
+
+    public double circleCircumference(double radius) {
+        double result = 2 * radius * Math.PI;
+        return result;
+    }
+
+    public boolean isPrime(double candidate) {
+        boolean result = true;
+        for (int i = 2; i < Math.sqrt(candidate); i++) {
+            if (candidate % i == 0) {
+                result = false;
+                break;
+            }
+        }
+        return result;
+    }
+
+    public int[] primes(int start, int finish) {
+        int primeCount = 0;
+        boolean[] testedPrimes = new boolean[finish - start];
+        for (int i = start; i < finish; i++) {
+            if (isPrime(i)) {
+                testedPrimes[i - start] = true;
+                primeCount++;
+            }
+        }
+        int[] foundPrimes = new int[primeCount];
+
+        for (int i = 0; i < foundPrimes.length; i++) {
+            for (int j = 0; j < testedPrimes.length; j++) {
+                if (testedPrimes[j] == true) {
+                    testedPrimes[j] = false;
+                    foundPrimes[i] = j + start;
+                    break;
+                }
+            }
+        }
+        return foundPrimes;
+    }
+    public boolean sudukoTest(int[][] suduko){
+        boolean result = false;
+        
         return result;
     }
 
