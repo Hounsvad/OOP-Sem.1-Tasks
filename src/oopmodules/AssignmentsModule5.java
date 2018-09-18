@@ -162,19 +162,19 @@ public class AssignmentsModule5 {
     void task_Liang6_28() {
         Scanner input = new Scanner(System.in);
         while (true) {
-            System.out.print("Enter an integer value: ");
-            if (input.hasNextInt()) {
-                int[] primesCandidates = mersennePrime(input.nextInt());
-                System.out.println("A list of mersenne primes and their p value");
-                System.out.printf("%-20s%-20s%n", "p", "2^p – 1");
-                System.out.println("________________________________________");
-                for (int x : primesCandidates) {
-                    System.out.printf("%-20d%-20d%n", x, (long) (Math.pow(2, x) - 1));
+            System.out.print("Enter an integer value: "); // requesting user input
+            if (input.hasNextInt()) { // if the user inputs a valid number
+                int[] primesCandidates = mersennePrime(input.nextInt()); //request mersenne primes and creates an array to store them
+                System.out.println("A list of mersenne primes and their p value"); //prints headline
+                System.out.printf("%-20s%-20s%n", "p", "2^p – 1"); // prints explanatory line
+                System.out.println("________________________________________"); //Seperator line
+                for (int x : primesCandidates) {//Loops thru all primes returned from the mersennePrime method
+                    System.out.printf("%-20d%-20d%n", x, (long) (Math.pow(2, x) - 1)); // creates a line in the table and prints it
                 }
 
-                break;
+                break; //breakes out of the task
             } else {
-                input.next();
+                input.next(); // clears the input and continues 
             }
         }
     }
