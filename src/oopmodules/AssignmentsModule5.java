@@ -12,9 +12,10 @@ import java.util.Scanner;
  * @author Hounsvad
  */
 public class AssignmentsModule5 {
-/**
- * An assignment handler that runs the user requested task
- */
+
+    /**
+     * An assignment handler that runs the user requested task
+     */
     public void assignmentStarter() {
         Scanner input = new Scanner(System.in);
         int userInputInt = -0;
@@ -340,11 +341,13 @@ public class AssignmentsModule5 {
         results = String.format("%d:%d:%d", hours, minutes, seconds);
         return results;
     }
-/**
- * Returns an array containing all mersennePrimes smaller than or equal to n
- * @param n Largest number to check for mersennePrimes
- * @return Array of mersennePrimes smaller than or queal to n
- */
+
+    /**
+     * Returns an array containing all mersennePrimes smaller than or equal to n
+     *
+     * @param n Largest number to check for mersennePrimes
+     * @return Array of mersennePrimes smaller than or equeal to n
+     */
     public int[] mersennePrime(int n) {
         //Returns array containing testet p values resulting in a prime
 
@@ -372,33 +375,42 @@ public class AssignmentsModule5 {
         }
         return result;
     }
-/**
- * Returns the circumference of a circle based on the radius
- * @param radius Radius of the circle
- * @return Circumference of the circle
- */
+
+    /**
+     * Returns the circumference of a circle based on the radius
+     *
+     * @param radius Radius of the circle
+     * @return Circumference of the circle
+     */
     public double circleCircumference(double radius) {
         double result = 2 * radius * Math.PI;
         return result;
     }
-/**
- * Returns whether of not the input is a prime
- * @param candidate A number to be tested for whether or not it is prime
- * @return Boolean based on whether or not candidate is a prime
- */
-    public boolean isPrime(int candidate) {
+
+    /**
+     * Returns whether of not the input is a prime
+     *
+     * @param candidate An integer smaller than
+     *                  {@Value java.lang.Long#MAX_VALUE} to be tested for
+     *                  whether or not it is prime
+     * @return Boolean based on whether or not candidate is a prime
+     */
+    public boolean isPrime(long candidate) {
         boolean result = true;
         for (int i = 2; i < Math.sqrt(candidate); i++) {
             if (candidate % i == 0) {
                 result = false;
                 break;
+
             }
         }
         return result;
     }
+
     /**
      * Returns a list of primes within the specified inclusive range
-     * @param start The smallest number to check
+     *
+     * @param start  The smallest number to check
      * @param finish The largest number to check
      * @return An array of primes within the specified range
      */
@@ -424,11 +436,13 @@ public class AssignmentsModule5 {
         }
         return foundPrimes;
     }
-/**
- * Tests if a 9*9 jagged array is a valid suduko solution
- * @param suduko A 9*9 int jagged array
- * @return Boolean based on the validity of the input
- */
+
+    /**
+     * Tests if a 9*9 jagged array is a valid suduko solution
+     *
+     * @param suduko A 9*9 int jagged array
+     * @return Boolean based on the validity of the input
+     */
     public boolean sudukoTest(int[][] suduko) {
         boolean result = true;
         int[] val = new int[9];
