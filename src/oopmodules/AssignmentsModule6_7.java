@@ -98,7 +98,7 @@ public class AssignmentsModule6_7 {
 
         for (Customer customer : database.getCustomers()) {
             if (customer != null) {
-                System.out.println("Adding loalty bonus to " + customer.name);
+                System.out.println("Adding loyalty bonus to " + customer.name);
                 customer.deposit(10);
             }
         }
