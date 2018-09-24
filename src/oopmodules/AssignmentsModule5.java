@@ -210,23 +210,7 @@ public class AssignmentsModule5 {
 
     void task_d_7() {
         //Ekstraopgave D.7: Omskriv én løsning til opgave C.7 fra sidste uge til at benytte metoder. I kan bruge jeres egen løsning eller den vedhæftede.
-        int[][] buffer = {
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-            {0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-            {0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+        Scanner inputScanner = new Scanner(System.in);
         int[][] input = {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -244,17 +228,11 @@ public class AssignmentsModule5 {
             {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+        
         while (true) {
-            //System.out.println("End of for");
-            for (int i = 0; i < input.length; i++) {
-                System.arraycopy(buffer[i], 0, input[i], 0, input[i].length);
-            }
-            for (int i = 0; i < input.length; i++) {
-                for (int j = 0; j < input[i].length; j++) {
-                    System.out.printf("%d", input[i][j]);
-                }
-                System.out.printf("%n");
-            }
+
+            input = golCheckNeighber(input.clone());
+            golPrint(input);
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException ex) {
@@ -269,7 +247,7 @@ public class AssignmentsModule5 {
         int[][] suduku = new int[][]{
             {7, 3, 5, 6, 1, 4, 8, 9, 2},
             {8, 4, 2, 9, 7, 3, 5, 6, 1},
-            {9, 6, 1, 2, 8, 5, 3, 7, 4},
+            {7, 6, 1, 2, 8, 5, 3, 7, 4},
             {2, 8, 6, 3, 4, 9, 1, 5, 7},
             {4, 3, 1, 8, 5, 7, 9, 2, 6},
             {5, 7, 9, 1, 2, 6, 4, 3, 8},
@@ -384,6 +362,7 @@ public class AssignmentsModule5 {
 
     /**
      * Converts milliseconds to a string of Hours:Minutes:Seconds
+     *
      * @param millis An input in milliseconds smaller than Long.MAX_VALUE
      * @return A string of Hours:Minutes:Seconds based on millis
      */
@@ -445,8 +424,8 @@ public class AssignmentsModule5 {
      * Returns whether of not the input is a prime
      *
      * @param candidate An integer smaller than
-     *                  {@Value java.lang.Long#MAX_VALUE} to be tested for
-     *                  whether or not it is prime
+     * {@Value java.lang.Long#MAX_VALUE} to be tested for whether or not it is
+     * prime
      * @return Boolean based on whether or not candidate is a prime
      */
     public boolean isPrime(long candidate) {
@@ -464,7 +443,7 @@ public class AssignmentsModule5 {
     /**
      * Returns a list of primes within the specified inclusive range
      *
-     * @param start  The smallest number to check
+     * @param start The smallest number to check
      * @param finish The largest number to check
      * @return An array of primes within the specified range
      */
@@ -532,55 +511,79 @@ public class AssignmentsModule5 {
         return result;
     }
 
+    /**
+     * This method takes a game of life int 2d array where the array is uniform
+     * so that the internal arrays are the same sizes
+     *
+     * @param input 2d int array where the internal arrays are the same size
+     * @return 2d int array updated based on the input array and game og life
+     * rules
+     */
     public int[][] golCheckNeighber(int[][] input) {
         int[][] buffer = new int[input.length][input[0].length];
         for (int i = 0; i < input.length; i++) {
-                for (int j = 0; j < input[i].length; j++) {
-                    int liveNeighbers = 0;
-                    //System.out.printf("i: %d j: %d  iLenghth: %d jLength: %d%n", i, j, input.length, input[i].length);
-                    if (i != 0 && j != 0) {
-                        //Top left
-                        liveNeighbers += input[i - 1][j - 1];
-                    }
-                    if (i != 0) {
-                        //Top mid
-                        liveNeighbers += input[i - 1][j];
-                    }
-                    if (i > 0 && j < (input[i].length - 1)) {
-                        //Top right
-                        liveNeighbers += input[i - 1][j + 1];
-                    }
-                    if (j != 0) {
-                        //Left
-                        liveNeighbers += input[i][j - 1];
-                    }
-                    if (j < (input[i].length - 1)) {
-                        //Right
-                        liveNeighbers += input[i][j + 1];
-                    }
-                    if (i < (input.length - 1) && j != 0) {
-                        //Lower left
-                        liveNeighbers += input[i + 1][j - 1];
-                    }
-                    if (i < (input.length - 1)) {
-                        //Lower mid
-                        liveNeighbers += input[i + 1][j];
-                    }
-                    if (i < (input.length - 1) && j < (input[i].length - 1)) {
-                        //Lower right
-                        liveNeighbers += input[i + 1][j + 1];
-                    }
-                    //System.out.println("Live Neighbers " + liveNeighbers);
-                    if (liveNeighbers > 3 || liveNeighbers < 2) {
-                        buffer[i][j] = 0;
-                    } else if (liveNeighbers == 3) {
-                        buffer[i][j] = 1;
-                    } else if (liveNeighbers == 2 && input[i][j] == 1) {
-                        buffer[i][j] = 1;
-                    }
+            for (int j = 0; j < input[i].length; j++) {
+                int liveNeighbers = 0;
+                //System.out.printf("i: %d j: %d  iLenghth: %d jLength: %d%n", i, j, input.length, input[i].length);
+                if (i != 0 && j != 0) {
+                    //Top left
+                    liveNeighbers += input[i - 1][j - 1];
+                }
+                if (i != 0) {
+                    //Top mid
+                    liveNeighbers += input[i - 1][j];
+                }
+                if (i > 0 && j < (input[i].length - 1)) {
+                    //Top right
+                    liveNeighbers += input[i - 1][j + 1];
+                }
+                if (j != 0) {
+                    //Left
+                    liveNeighbers += input[i][j - 1];
+                }
+                if (j < (input[i].length - 1)) {
+                    //Right
+                    liveNeighbers += input[i][j + 1];
+                }
+                if (i < (input.length - 1) && j != 0) {
+                    //Lower left
+                    liveNeighbers += input[i + 1][j - 1];
+                }
+                if (i < (input.length - 1)) {
+                    //Lower mid
+                    liveNeighbers += input[i + 1][j];
+                }
+                if (i < (input.length - 1) && j < (input[i].length - 1)) {
+                    //Lower right
+                    liveNeighbers += input[i + 1][j + 1];
+                }
+                //System.out.println("Live Neighbers " + liveNeighbers);
+                if (liveNeighbers > 3 || liveNeighbers < 2) {
+                    buffer[i][j] = 0;
+                } else if (liveNeighbers == 3) {
+                    buffer[i][j] = 1;
+                } else if (liveNeighbers == 2 && input[i][j] == 1) {
+                    buffer[i][j] = 1;
                 }
             }
+        }
         return buffer;
     }
-
+    
+    /**
+     * Prints out a game of life environment
+     * @param input 2d int array where the internal arrays are the same size
+     */
+    public void golPrint(int[][] input) {
+        String paddingString = "-----------------------------------";
+        System.out.println(paddingString);
+        for (int i = 0; i < input.length; i++) {
+            System.out.printf("|");
+            for (int j = 0; j < input[i].length; j++) {
+                System.out.printf("%s", (input[i][j] == 1 ? "\176": "\177"));
+            }
+            System.out.printf("|%n");
+        }
+        System.out.printf(paddingString);
+    }
 }
