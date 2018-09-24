@@ -196,7 +196,6 @@ public class AssignmentsModule5 {
 
     void task_d_5() {
         /*  Skriv et program, der finder alle primtal mellem 100 og 200 og som har og benytter to metoder (ud over main):
-
             public static void init ()
             public static boolean isPrime(int potential)
          */
@@ -204,7 +203,6 @@ public class AssignmentsModule5 {
         for (int i : primes(100, 200)) {
             System.out.println(i);
         }
-
     }
 
     void task_d_7() {
@@ -227,7 +225,7 @@ public class AssignmentsModule5 {
             {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-        
+
         while (true) {
 
             input = golCheckNeighber(input.clone());
@@ -347,15 +345,19 @@ public class AssignmentsModule5 {
      * @return Approximate square root of n
      */
     public double sqrt(long n) {
+
         double result = 0;
         double lastGuess = n;
         double nextGuess = n;
+
         do {
             lastGuess = nextGuess;
             nextGuess = (lastGuess + (n / lastGuess)) / 2;
             //System.out.printf("lastGuess: %.5f nextGuess: %.5f%n",lastGuess, nextGuess);
         } while (Math.abs(nextGuess - lastGuess) > 0.0000000000001);
+
         result = lastGuess;
+
         return result;
     }
 
@@ -470,6 +472,17 @@ public class AssignmentsModule5 {
     }
 
     /**
+     * Takes a one dimentional int array and changes all values to 0
+     *
+     * @param input a one dimentional array
+     */
+    public void clearIntArray(int[] input) {
+        for (int i = 0; i < input.length; i++) {
+            input[i] = 0;
+        }
+    }
+
+    /**
      * Tests if a 9*9 jagged array is a valid suduko solution
      *
      * @param suduko A 9*9 int jagged array
@@ -484,12 +497,26 @@ public class AssignmentsModule5 {
             for (int i = 0; i < suduko.length; i++) {
                 val[suduko[i][j] - 1]++;
             }
+            for (int i = 0; i < val.length; i++) {
+                if (val[i] != 1) {
+                    result = false;
+                    return result;
+                }
+            }
+            clearIntArray(val);
         }
         //Testing horisontal
         for (int j = 0; j < suduko.length; j++) {
             for (int i = 0; i < suduko.length; i++) {
                 val[suduko[j][i] - 1]++;
             }
+            for (int i = 0; i < val.length; i++) {
+                if (val[i] != 1) {
+                    result = false;
+                    return result;
+                }
+            }
+            clearIntArray(val);
         }
         //Testing squares
         for (int i = 0; i <= 6; i += 3) {
@@ -499,12 +526,13 @@ public class AssignmentsModule5 {
                         val[suduko[i + k][j + l] - 1]++;
                     }
                 }
-            }
-        }
-        //checking suduko
-        for (int x : val) {
-            if (x != 27) {
-                result = false;
+                for (int k = 0; k < val.length; k++) {
+                    if (val[k] != 1) {
+                        result = false;
+                        return result;
+                    }
+                }
+                clearIntArray(val);
             }
         }
         return result;
@@ -568,9 +596,10 @@ public class AssignmentsModule5 {
         }
         return buffer;
     }
-    
+
     /**
      * Prints out a game of life environment
+     *
      * @param input 2d int array where the internal arrays are the same size
      */
     public void golPrint(int[][] input) {
@@ -579,7 +608,7 @@ public class AssignmentsModule5 {
         for (int i = 0; i < input.length; i++) {
             System.out.printf("|");
             for (int j = 0; j < input[i].length; j++) {
-                System.out.printf("%s", (input[i][j] == 1 ? "\176": "\177"));
+                System.out.printf("%s", (input[i][j] == 1 ? "\176" : "\177"));
             }
             System.out.printf("|%n");
         }
