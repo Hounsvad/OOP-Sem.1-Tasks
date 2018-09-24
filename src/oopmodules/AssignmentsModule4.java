@@ -296,9 +296,10 @@ public class AssignmentsModule4 {
                 }
             }
             //System.out.println("End of for");
-            for (int i = 0; i < current.length; i++) {
-                System.arraycopy(buffer[i], 0, current[i], 0, current[i].length);
-            }
+//            for (int i = 0; i < current.length; i++) {
+//                System.arraycopy(buffer[i], 0, current[i], 0, current[i].length);
+//            }
+            current = buffer.clone();
             for (int i = 0; i < current.length; i++) {
                 for (int j = 0; j < current[i].length; j++) {
                     System.out.printf("%d", current[i][j]);
