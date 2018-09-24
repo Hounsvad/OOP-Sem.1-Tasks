@@ -23,24 +23,31 @@ public class CustomerDatabase {
                 return false;
             }
         }
+        System.out.println("There were an issue adding the customer to the database");
         return true;
     }
-    public boolean removeCustomer(int _id){
+
+    public boolean removeCustomer(int _id) {
         for (int i = 0; i < customers.length; i++) {
-            if(customers[i].id == _id){
+            if (customers[i].id == _id) {
                 customers[i] = null;
                 return false;
             }
         }
+        System.out.println("There were an issue removing the customer from the database");
         return true;
     }
-    public Customer[] getCustomers(){
+
+    public Customer[] getCustomers() {
         return customers;
     }
-    public void printCustomerNames(){
-        for(Customer customer : customers){
-            System.out.println(customer.name);
+
+    public void printCustomerNames() {
+        for (Customer customer : customers) {
+            if (customer != null) {
+                System.out.println(customer.name);
+            }
         }
     }
-    
+
 }

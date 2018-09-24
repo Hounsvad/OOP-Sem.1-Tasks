@@ -82,5 +82,26 @@ public class AssignmentsModule6_7 {
     }
 
     void assignment2() {
+        CustomerDatabase database = new CustomerDatabase();
+        Customer c1 = new Customer("Bob briary", 1, 0);
+        Customer c2 = new Customer("Beatrice briary", 2, 500);
+
+        database.addCustomer(c1);
+        database.addCustomer(c2);
+
+        database.printCustomerNames();
+
+        //Bobs wife does not want him here she handles the money
+        database.removeCustomer(1);
+
+        database.printCustomerNames();
+
+        for (Customer customer : database.getCustomers()) {
+            if (customer != null) {
+                System.out.println("Adding loalty bonus to " + customer.name);
+                customer.deposit(10);
+            }
+        }
     }
+}
 }
