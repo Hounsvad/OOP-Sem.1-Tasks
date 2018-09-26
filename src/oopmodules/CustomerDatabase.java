@@ -34,6 +34,7 @@ public class CustomerDatabase {
         System.out.println("There were an issue adding the customer to the database");
         return true;
     }
+    
     /**
      * Removes a customer if possible
      * @param _id An id of an existing customer in the database
@@ -67,6 +68,8 @@ public class CustomerDatabase {
                 System.out.println(customer.name);
             }
         }
+        
+        
     }
 
 }

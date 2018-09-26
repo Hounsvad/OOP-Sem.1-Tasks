@@ -425,7 +425,7 @@ public class AssignmentsModule5 {
      * Returns whether of not the input is a prime
      *
      * @param candidate An integer smaller than
-     * {@Value java.lang.Long#MAX_VALUE} to be tested for whether or not it is
+     * #MAX_VALUE to be tested for whether or not it is
      * prime
      * @return Boolean based on whether or not candidate is a prime
      */
