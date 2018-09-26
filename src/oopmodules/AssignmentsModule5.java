@@ -472,9 +472,8 @@ public class AssignmentsModule5 {
     }
 
     /**
-     * Takes a one dimentional int array and changes all values to 0
-     *
-     * @param input a one dimentional array
+     * Takes a one dimensional int array and changes all values to 0
+     * @param input a one dimensional array
      */
     public void clearIntArray(int[] input) {
         for (int i = 0; i < input.length; i++) {

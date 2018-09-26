@@ -19,10 +19,12 @@ public class AssignmentManager {
         //Instantiating assignments
         AssignmentsModule4 modul4 = new AssignmentsModule4();
         AssignmentsModule5 modul5 = new AssignmentsModule5();
+        AssignmentsModule6_7 modul6_7 = new AssignmentsModule6_7();
         
         //Calling Assignments
         //modul4.assignmentStarter();
-        modul5.assignmentStarter();
+        //modul5.assignmentStarter();
+        modul6_7.assignmentStarter();
     }
     
 }
