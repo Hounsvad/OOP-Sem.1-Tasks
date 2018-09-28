@@ -124,6 +124,6 @@ public class Fan {
                              this.speed,
                              this.colour,
                              this.radius,
-                             (this.on ? "On" : "Off"));
+                             this.on ? "On" : "Off");
     }
 }
