@@ -111,7 +111,6 @@ public class Fan {
     public void setOn(boolean on) {
         this.on = on;
     }
-
     /**
      * Generates a string about the fan
      * @return String about the fan
