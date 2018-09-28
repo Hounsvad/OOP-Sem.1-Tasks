@@ -5,6 +5,8 @@
  */
 package oopmodules;
 
+import oopmodule8.AssignmentsModule8;
+
 /**
  *
  * @author Pinnacle F
@@ -20,11 +22,13 @@ public class AssignmentManager {
         AssignmentsModule4 modul4 = new AssignmentsModule4();
         AssignmentsModule5 modul5 = new AssignmentsModule5();
         AssignmentsModule6_7 modul6_7 = new AssignmentsModule6_7();
+        AssignmentsModule8 modul8 = new AssignmentsModule8();
         
         //Calling Assignments
         //modul4.assignmentStarter();
         //modul5.assignmentStarter();
-        modul6_7.assignmentStarter();
+        //modul6_7.assignmentStarter();
+        modul8.assignmentStarter();
     }
     
 }

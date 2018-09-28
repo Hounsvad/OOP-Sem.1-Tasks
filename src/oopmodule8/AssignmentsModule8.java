@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package oopmodules;
+package oopmodule8;
 
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -21,8 +22,11 @@ public class AssignmentsModule8 {
         int userInputInt = -0;
         String userInputString = "";
         String[] assignments = new String[]{
-            "Assignment 1",
-            "Assignment 2"
+            "Liang 9.3",
+            "Liang 9.8",
+            "Opgave A",
+            "Opgave B",
+            "Opgave C"
         };
         while (true) {
             while (true) {
@@ -59,46 +63,61 @@ public class AssignmentsModule8 {
             System.out.printf("---------------------|%-19s %12s|---------------------%n", "Start of assignment", assignments[userInputInt - 1]);
             switch (userInputInt) {
                 case 1:
-                    assignment1();
+                    liang9_3();
                     System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 case 2:
-                    assignment2();
+                    liang9_8();
                     System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
+                case 3:
+                    taskA();
+                    System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
+                    break;
+                case 4:
+                    taskB();
+                    System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
+                    break;    
+                case 5:
+                    taskC();
+                    System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
+                    break;    
                 default:
             }
         }
     }
 
-    void assignment1() {
-        Customer aCustomer = new Customer("Bob briary", 2060518, 13.51);
-        aCustomer.deposit(100);
-        aCustomer.withdraw(99.99);
-        System.out.printf("The customer balance of " + aCustomer.name + " is %.4f SDU Bobs%n", aCustomer.getBalance());
+    void liang9_3(){
+        Date dateObject = new Date();
+        long[] numbers  = new long[]{10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000L, 100000000000L};
+        for (long number : numbers) {
+            dateObject.setTime(number);
+            System.out.println(dateObject.toString());
+        }
     }
 
-    void assignment2() {
-        CustomerDatabase database = new CustomerDatabase();
-        Customer c1 = new Customer("Bob briary", 1, 0);
-        Customer c2 = new Customer("Beatrice briary", 2, 500);
-
-        database.addCustomer(c1);
-        database.addCustomer(c2);
-
-        database.printCustomerNames();
-
-        //Bobs wife does not want him here she handles the money
-        database.removeCustomer(1);
-
-        database.printCustomerNames();
-
-        for (Customer customer : database.getCustomers()) {
-            if (customer != null) {
-                System.out.println("Adding loyalty bonus to " + customer.name);
-                customer.deposit(10);
-            }
-        }
+    void liang9_8(){
+        Fan testFan1 = new Fan();
+        Fan testFan2 = new Fan();
+        
+        testFan1.setColour("yellow");
+        testFan1.setOn(true);
+        
+        testFan2.setColour("blue");
+        testFan2.setOn(false);
+        
+        System.out.println(testFan1.toString());
+        System.out.println(testFan2.toString());
+        
+    }
+    void taskA(){
+        
+    }
+    void taskB(){
+        
+    }
+    void taskC(){
+        
     }
 }
 
