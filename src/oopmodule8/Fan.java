@@ -112,6 +112,10 @@ public class Fan {
         this.on = on;
     }
 
+    /**
+     * Generates a string about the fan
+     * @return String about the fan
+     */
     public String toString(){
         return String.format("%1$-20s" + "%5$10d" + "%n" +
                              "%2$-20s" + "%6$10s" + "%n" +
