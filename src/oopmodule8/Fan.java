@@ -26,19 +26,19 @@ public class Fan {
     /**
      * Denotes the fan speed
      */
-    private int speed = SLOW;
+    private int speed;
     /**
      * Denotes whether the fan is on
      */
-    private boolean on = false;
+    private boolean on;
     /**
      * Indicates the radius of the fan
      */
-    private double radius = 5.0;
+    private double radius;
     /**
      * Denotes the colour of the fan
      */
-    private String colour = "Blue";
+    private String colour;
 
     /**
      * Generates a custom fan
@@ -55,6 +55,7 @@ public class Fan {
     }
 
     public Fan() {
+        this.Fan(SLOW,false,5,"blue")
     }
 
     /**
