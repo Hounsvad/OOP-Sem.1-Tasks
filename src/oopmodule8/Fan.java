@@ -41,6 +41,23 @@ public class Fan {
     private String colour = "Blue";
 
     /**
+     * Generates a custom fan
+     * @param speed int with the value 1 or 2 or 3
+     * @param on on-state as boolean
+     * @param radius radius as double
+     * @param colour colour as string
+     */
+    public Fan(int speed, boolean on, double radius, String colour) {
+        this.setSpeed(speed);
+        this.on = on;
+        this.radius = radius;
+        this.colour = colour;
+    }
+
+    public Fan() {
+    }
+
+    /**
      * Gets the colour of the fan
      *
      * @return Returns the colour of the fan as a string
