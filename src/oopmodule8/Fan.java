@@ -111,7 +111,10 @@ public class Fan {
     public void setOn(boolean on) {
         this.on = on;
     }
-
+    /**
+     * Walla
+     * @return kebab
+     */
     public String toString(){
         return String.format("%1$-20s" + "%5$10d" + "%n" +
                              "%2$-20s" + "%6$10s" + "%n" +
