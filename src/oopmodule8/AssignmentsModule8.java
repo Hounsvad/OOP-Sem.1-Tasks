@@ -111,15 +111,9 @@ public class AssignmentsModule8 {
         
     }
     void taskA(){
-        Fan testFan1 = new Fan();
-        Fan testFan2 = new Fan();
-        
-        testFan1.setColour("yellow");
-        testFan1.setOn(true);
-        
-        testFan2.setColour("blue");
-        testFan2.setOn(false);
-        
+        Fan testFan1 = new Fan(1, true, 5, "Yellow");
+        Fan testFan2 = new Fan(1, false, 5, "Blue");
+                
         System.out.println(testFan1.toString());
         System.out.println(testFan2.toString());
     }
