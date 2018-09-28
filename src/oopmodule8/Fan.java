@@ -14,15 +14,15 @@ public class Fan {
     /**
      * Indicates slow speed
      */
-    private int SLOW = 1;
+    private final int SLOW = 1;
     /**
      * Indicates medium speed
      */
-    private int MEDIUM = 2;
+    private final int MEDIUM = 2;
     /**
      * Indicates fast speed
      */
-    private int FAST = 3;
+    private final int FAST = 3;
     /**
      * Denotes the fan speed
      */
@@ -91,7 +91,9 @@ public class Fan {
      * @param speed an int representing the speed setting of the fan
      */
     public void setSpeed(int speed) {
-        this.speed = speed;
+        if (speed == SLOW || speed == MEDIUM || speed == FAST) {
+            this.speed = speed;
+        }
     }
 
     /**
@@ -111,22 +113,24 @@ public class Fan {
     public void setOn(boolean on) {
         this.on = on;
     }
+
     /**
      * Generates a string about the fan
+     *
      * @return String about the fan
      */
-    public String toString(){
-        return String.format("%1$-20s" + "%5$10d" + "%n" +
-                             "%2$-20s" + "%6$10s" + "%n" +
-                             "%3$-20s" + "%7$10.3f" + "%n" +
-                             "%4$-20s" + "%8$10s" + "%n", 
-                             "Fan speed:",
-                             "Fan colour:",
-                             "Fan radius:",
-                             "Fan on-state:",
-                             this.speed,
-                             this.colour,
-                             this.radius,
-                             this.on ? "On" : "Off");
+    public String toString() {
+        return String.format("%1$-20s" + "%5$10d" + "%n"
+                + "%2$-20s" + "%6$10s" + "%n"
+                + "%3$-20s" + "%7$10.3f" + "%n"
+                + "%4$-20s" + "%8$10s" + "%n",
+                "Fan speed:",
+                "Fan colour:",
+                "Fan radius:",
+                "Fan on-state:",
+                this.speed,
+                this.colour,
+                this.radius,
+                this.on ? "On" : "Off");
     }
 }
