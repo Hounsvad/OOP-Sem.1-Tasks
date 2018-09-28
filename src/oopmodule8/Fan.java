@@ -42,8 +42,9 @@ public class Fan {
 
     /**
      * Generates a custom fan
-     * @param speed int with the value 1 or 2 or 3
-     * @param on on-state as boolean
+     *
+     * @param speed  int with the value 1 or 2 or 3
+     * @param on     on-state as boolean
      * @param radius radius as double
      * @param colour colour as string
      */
@@ -55,7 +56,7 @@ public class Fan {
     }
 
     public Fan() {
-        this.Fan(SLOW,false,5,"blue")
+        this.Fan(SLOW, false, 5, "blue")
     }
 
     /**
@@ -138,7 +139,8 @@ public class Fan {
      * @return String about the fan
      */
     public String toString() {
-        return String.format("%1$-20s" + "%5$10d" + "%n"
+        return String.format(
+                "%1$-20s" + "%5$10d" + "%n"
                 + "%2$-20s" + "%6$10s" + "%n"
                 + "%3$-20s" + "%7$10.3f" + "%n"
                 + "%4$-20s" + "%8$10s" + "%n",
@@ -150,5 +152,29 @@ public class Fan {
                 this.colour,
                 this.radius,
                 this.on ? "On" : "Off");
+    }
+
+    /**
+     * Generates a sting about the fan with a custom timestamp
+     *
+     * @param date a date object
+     * @return String about fan with timestamp
+     */
+    public String toSring(java.util.Date date) {
+        return String.format(
+                "%9$%n"
+                + "%1$-20s" + "%5$10d" + "%n"
+                + "%2$-20s" + "%6$10s" + "%n"
+                + "%3$-20s" + "%7$10.3f" + "%n"
+                + "%4$-20s" + "%8$10s" + "%n",
+                "Fan speed:",
+                "Fan colour:",
+                "Fan radius:",
+                "Fan on-state:",
+                this.speed,
+                this.colour,
+                this.radius,
+                this.on ? "On" : "Off",
+                date.toString());
     }
 }
