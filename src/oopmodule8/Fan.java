@@ -56,7 +56,7 @@ public class Fan {
     }
 
     public Fan() {
-        this.Fan(SLOW, false, 5, "blue")
+        this(1, false, 5.0, "blue");
     }
 
     /**

@@ -77,51 +77,61 @@ public class AssignmentsModule8 {
                 case 4:
                     taskB();
                     System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
-                    break;    
+                    break;
                 case 5:
                     taskC();
                     System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
-                    break;    
+                    break;
                 default:
             }
         }
     }
 
-    void liang9_3(){
+    void liang9_3() {
         Date dateObject = new Date();
-        long[] numbers  = new long[]{10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000L, 100000000000L};
+        long[] numbers = new long[]{10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000L, 100000000000L};
         for (long number : numbers) {
             dateObject.setTime(number);
             System.out.println(dateObject.toString());
         }
     }
 
-    void liang9_8(){
+    void liang9_8() {
         Fan testFan1 = new Fan();
         Fan testFan2 = new Fan();
-        
+
         testFan1.setColour("yellow");
         testFan1.setOn(true);
-        
+
         testFan2.setColour("blue");
         testFan2.setOn(false);
-        
+
         System.out.println(testFan1.toString());
         System.out.println(testFan2.toString());
-        
+
     }
-    void taskA(){
+
+    void taskA() {
         Fan testFan1 = new Fan(1, true, 5, "Yellow");
         Fan testFan2 = new Fan(1, false, 5, "Blue");
-                
+
         System.out.println(testFan1.toString());
         System.out.println(testFan2.toString());
     }
-    void taskB(){
-        
+
+    void taskB() {
+        Fan testFan1 = new Fan(1, true, 5, "Yellow");
+        Fan testFan2 = new Fan(1, false, 5, "Blue");
+
+        System.out.println(testFan1.toString());
+        System.out.println(testFan2.toString());
     }
-    void taskC(){
-        
+
+    void taskC() {
+        Fan testFan1 = new Fan(1, true, 5, "Yellow");
+        Fan testFan2 = new Fan(1, false, 5, "Blue");
+
+        System.out.println(testFan1.toString());
+        System.out.println(testFan2.toString());
     }
 }
-
