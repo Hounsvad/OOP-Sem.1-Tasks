@@ -20,7 +20,7 @@ public class AssignmentsModule5 {
      */
     public void assignmentStarter() {
         Scanner input = new Scanner(System.in);
-        int userInputInt = -0;
+        int userInputInt = -1;
         String userInputString = "";
         String[] assignments = new String[]{
             "Liang 6.2",
@@ -31,7 +31,7 @@ public class AssignmentsModule5 {
             "Liang 6.28",
             "Opgave D.2",
             "Opgave D.5",
-            "Opgave D.7(WIP)",
+            "Opgave D.7",
             "Opgave D.8"
         };
         while (true) {
@@ -118,7 +118,7 @@ public class AssignmentsModule5 {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter an integer value: ");
         if (input.hasNextLong()) {
-            System.out.println("The sum of the digits is" + (sumDigits(input.nextLong())));
+            System.out.println("The sum of the digits is " + (sumDigits(input.nextLong())));
         }
     }
 

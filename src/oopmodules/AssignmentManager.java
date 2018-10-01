@@ -26,9 +26,9 @@ public class AssignmentManager {
         
         //Calling Assignments
         //modul4.assignmentStarter();
-        //modul5.assignmentStarter();
+        modul5.assignmentStarter();
         //modul6_7.assignmentStarter();
-        modul8.assignmentStarter();
+        //modul8.assignmentStarter();
     }
     
 }
