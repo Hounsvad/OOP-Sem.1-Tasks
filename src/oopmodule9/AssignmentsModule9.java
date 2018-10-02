@@ -5,6 +5,7 @@
  */
 package oopmodule9;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -61,6 +62,9 @@ public class AssignmentsModule9 {
 
         //showing cup noodles contents
         System.out.println(database.getProduct("cup noodles").toString());
+        
+        //System.out.println(database.getProduct("squash").isExpired(new Date(System.currentTimeMillis())));
+        
         System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", "Todays assignment");
     }
 }
