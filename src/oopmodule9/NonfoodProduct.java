@@ -64,7 +64,7 @@ public class NonfoodProduct extends Product {
     public String toString() {
         String result = this.getItemName() + "%n";
         for (int i = 0; i < this.materialList.length; i++) {
-            result = result + "* " + materialList[i] + (i == this.materialList.length - 1 ? "" : "%n");
+            result = result + " * " + materialList[i] + (i == this.materialList.length - 1 ? "" : "%n");
         }
         result = String.format(result);
         return result;
