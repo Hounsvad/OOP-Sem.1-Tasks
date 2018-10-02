@@ -5,6 +5,8 @@
  */
 package oopmodule9;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -39,10 +41,11 @@ public class FoodProduct extends Product {
 
     @Override
     public String toString() {
+        SimpleDateFormat dateFormater = new SimpleDateFormat("EEE, dd MMM yyyy");
         String result = String.format("%s%n%-15s: %s",
                 this.getItemName(),
                 " - Expiration date",
-                this.expirationDate.toString());
+                dateFormater.format(expirationDate));
         return result;
     }
 }

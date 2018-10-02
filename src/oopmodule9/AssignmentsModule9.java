@@ -31,7 +31,7 @@ public class AssignmentsModule9 {
         NonfoodProduct toilet = new NonfoodProduct("Shitomatron 5000", 20000, new String[]{"PP", "PET", "PVC", "Copper", "Glassfiber"});
 
         //food items
-        FoodProduct squash = new FoodProduct("Squash", 15, new Date(1538690400000L), 5);
+        FoodProduct squash = new FoodProduct("Squash", 15, new Date(1538517600000L), 5);
         FoodProduct cannedPeaches = new FoodProduct("Canned peaches", 8, new Date(1570226400000L), 20);
 
         //Adding items to db
