@@ -5,6 +5,7 @@
  */
 package oopmodule9;
 
+import com.sun.corba.se.impl.oa.toa.TOA;
 import java.util.Arrays;
 
 /**
@@ -50,14 +51,23 @@ public class NonfoodProduct extends Product {
         }
         return false;
     }
-    
-    public boolean containsMaterial(String material){
+
+    public boolean containsMaterial(String material) {
         for (String _material : this.materialList) {
             if (_material.toLowerCase() == null ? false : _material.toLowerCase().equals(material.toLowerCase())) {
                 return true;
             }
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        String result = this.getItemName() + "%n";
+        for (int i = 0; i < this.materialList.length; i++) {
+            result = result + "* " + materialList[i] + (i == this.materialList.length - 1 ? "" : "%n");
+        }
+        return result;
     }
 
 }
