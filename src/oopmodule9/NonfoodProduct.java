@@ -37,7 +37,7 @@ public class NonfoodProduct extends Product {
     public boolean removeFromMaterialList(String material) {
         int foundIndex = -1;
         for (int i = 0; i < this.materialList.length; i++) {
-            if (material.toLowerCase() == this.materialList[i].toLowerCase()) {
+            if (material.toLowerCase() == null ? false : material.toLowerCase().equals(this.materialList[i].toLowerCase())) {
                 foundIndex = i;
                 break;
             }
@@ -52,8 +52,8 @@ public class NonfoodProduct extends Product {
     }
     
     public boolean containsMaterial(String material){
-        for (int i = 0; i < this.materialList.length; i++) {
-            if (this.materialList[i].toLowerCase() == material.toLowerCase()) {
+        for (String _material : this.materialList) {
+            if (_material.toLowerCase() == null ? false : _material.toLowerCase().equals(material.toLowerCase())) {
                 return true;
             }
         }
