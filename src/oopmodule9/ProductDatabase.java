@@ -56,7 +56,14 @@ public class ProductDatabase {
         }
         return false;
     }
-
+    
+    public double productDatabase(){
+        double sum = 0;
+        for(Product product : this.list){
+            sum += product.getItemPrice();
+        }
+        return sum;
+    }
     @Override
     public String toString() {
 
