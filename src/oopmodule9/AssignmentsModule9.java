@@ -47,7 +47,16 @@ public class AssignmentsModule9 {
         
         //Removing toilet from database
         database.removeProduct(2);
+        System.out.println("After removing toilet");
+        System.out.println(database.toString());
         
+        //Adding new product
+        database.addProduct(new FoodProduct("Cup noodles", 1.25d, new Date(1664920800000L), 25));
+        System.out.println("After adding cup noodles");
+        System.out.println(database.toString());
+        
+        //showing brush contents
+        database.getProduct("wetbrush");
         System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", "Todays assignment");
     }
 }

@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class ProductDatabase {
 
-    Product[] list;
+    private Product[] list;
     private int initialListLength = -1;
 
     public ProductDatabase() {
@@ -24,6 +24,10 @@ public class ProductDatabase {
     public ProductDatabase(int initialListLength) {
         this.list = new Product[initialListLength];
         this.initialListLength = initialListLength;
+    }
+
+    public Product[] getList() {
+        return list.clone();
     }
 
     public boolean addProduct(Product product) {
@@ -69,16 +73,33 @@ public class ProductDatabase {
         return sum;
     }
 
+    public Product getProduct(int itemID) {
+        for (Product product : this.list) {
+            if (product != null || product.getItemID() == itemID) {
+                return product;
+            }
+        }
+        return null;
+    }
+    public Product getProduct(String itemName){
+        for (Product list1 : this.list) {
+            if (list1 != null || list1.getItemName().equals(itemName.toLowerCase())) {
+                return list1;
+            }
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         String result = String.format("%-25s%-25s%-25s%n", "Items", "Item id", "Item price");
-        for (int i = 0; i < this.list.length; i++) {
-            if (this.list[i] != null) {
+        for (Product product : this.list) {
+            if (product != null) {
                 result = result + String.format(
                         "%-25s%-25s%-25s%n",
-                        this.list[i].getItemName(),
-                        this.list[i].getItemID(),
-                        this.list[i].getItemPrice());
+                        product.getItemName(),
+                        product.getItemID(),
+                        product.getItemPrice());
             }
         }
         return result;
