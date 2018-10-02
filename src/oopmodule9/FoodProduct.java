@@ -5,14 +5,34 @@
  */
 package oopmodule9;
 
+import java.util.Date;
+
 /**
  *
  * @author Pinnacle F
  */
 public class FoodProduct extends Product{
+    private final Date expirationDate;
+    private final int StorageTemperature;
+    
+    public FoodProduct(String itemName, double itemPrice, Date expirationDate, int storageTemperature) {
+        super(itemName, itemPrice);
+        this.expirationDate = expirationDate;
+        this.StorageTemperature = storageTemperature;
+    }
 
-    public FoodProduct() {
-        super(null, 0);
+    public Date getExpirationDate() {
+        return expirationDate;
+    }
+
+    public int getStorageTemperature() {
+        return StorageTemperature;
     }
     
+    public boolean isExpired(Date comparedDate){
+        if(comparedDate.getTime() > this.expirationDate.getTime()){
+            return true;
+        }
+        return false;
+    }
 }
