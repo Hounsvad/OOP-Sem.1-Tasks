@@ -39,10 +39,14 @@ public class AssignmentsModule9 {
         database.addProduct(toilet);
         System.out.println("After adding Nonfood items");
         System.out.println(database.toString());
+        
         database.addProduct(squash);
         database.addProduct(cannedPeaches);
         System.out.println("After adding food items");
         System.out.println(database.toString());
+        
+        //Removing toilet from database
+        database.removeProduct(2);
         
         System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", "Todays assignment");
     }

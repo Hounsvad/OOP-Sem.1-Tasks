@@ -41,9 +41,11 @@ public class ProductDatabase {
     public boolean removeProduct(int itemID) {
         int foundIndex = -1;
         for (int i = 0; i < this.list.length; i++) {
-            if (this.list[i].getItemID() == itemID) {
-                foundIndex = i;
+            if (this.list[i] != null) {
+                if (this.list[i].getItemID() == itemID) {
+                    foundIndex = i;
 
+                }
             }
         }
         if (foundIndex != -1) {
@@ -70,9 +72,15 @@ public class ProductDatabase {
     @Override
     public String toString() {
         String result = String.format("%-25s%-25s%-25s%n", "Items", "Item id", "Item price");
-        for (int i = 0; i < 10; i++) {
-        result = result + String.format("%-25s%-25s%-25s",list[i].getItemName(),list[i].getItemID(),list[i].getItemPrice());//result + " - " + list[i].getItemName() + (i == this.materialList.length - 1 ? "" : "%n");
+        for (int i = 0; i < this.list.length; i++) {
+            if (this.list[i] != null) {
+                result = result + String.format(
+                        "%-25s%-25s%-25s%n",
+                        this.list[i].getItemName(),
+                        this.list[i].getItemID(),
+                        this.list[i].getItemPrice());
+            }
         }
-        return "";
+        return result;
     }
 }
