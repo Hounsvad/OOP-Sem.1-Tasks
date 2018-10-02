@@ -69,7 +69,10 @@ public class ProductDatabase {
 
     @Override
     public String toString() {
-
+        String result = String.format("%-25s%-25s%-25s%n", "Items", "Item id", "Item price");
+        for (int i = 0; i < 10; i++) {
+        result = result + String.format("%-25s%-25s%-25s",list[i].getItemName(),list[i].getItemID(),list[i].getItemPrice());//result + " - " + list[i].getItemName() + (i == this.materialList.length - 1 ? "" : "%n");
+        }
         return "";
     }
 }

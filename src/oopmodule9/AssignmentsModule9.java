@@ -5,9 +5,7 @@
  */
 package oopmodule9;
 
-import oopmodule8.*;
 import java.util.Date;
-import java.util.Scanner;
 
 /**
  *
@@ -19,75 +17,29 @@ public class AssignmentsModule9 {
      * An assignment handler that runs the user requested task
      */
     public void assignmentStarter() {
-        Scanner input = new Scanner(System.in);
-        int userInputInt = -0;
-        String userInputString = "";
-        String[] assignments = new String[]{
-            "Opgave 1",
-            "Opgave 2",
-            "Opgave 3"
-        };
-        while (true) {
-            while (true) {
-                for (int i = 0; i < assignments.length; i++) {
-                    System.out.println((i + 1) + ". " + assignments[i]);
-                }
-                System.out.println("Enter a value equal to the desired task");
-                if (input.hasNext()) {
-                    if (input.hasNextInt()) {
-                        userInputInt = input.nextInt();
-                        break;
-                    } else {
-                        userInputString = input.next();
-                        break;
-                    }
-                } else {
-                    input.next();
-                }
-            }
-            if (userInputInt == -1) {
-                //Too lazy to turn this into a if else statement
-                switch (userInputString.toLowerCase()) {
-                    case "exit":
-                    case "terminate":
-                    case "end":
-                        System.exit(0);
-                        break;
-                    default:
-                        continue;
-                }
-            } else if (userInputInt > assignments.length) {
-                continue;
-            }
-            System.out.printf("---------------------|%-19s %12s|---------------------%n", "Start of assignment", assignments[userInputInt - 1]);
-            switch (userInputInt) {
-                case 1:
-                    task1();
-                    System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
-                    break;
-                case 2:
-                    task2();
-                    System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
-                    break;
-                case 3:
-                    task3();
-                    System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
-                    break;
-                default:
-            }
-        }
+        task();
     }
-
-    void task1() {
+    void task() {
+        System.out.printf("---------------------|%-19s %12s|---------------------%n", "Start of assignment", "Todays assignment");
+        //Creating database
+        ProductDatabase database = new ProductDatabase(20);
+        //Creating items
         
+        //Nonfood items
+        NonfoodProduct brush = new NonfoodProduct("WetBrush", 180, new String[]{"PP"});
+        NonfoodProduct toilet = new NonfoodProduct("Shitomatron 5000", 20000, new String[]{"PP", "PET", "PVC", "Copper", "Glassfiber"});
+        
+        //food items
+        FoodProduct squash = new FoodProduct("Squash", 15, new Date(1538690400000L), 5);
+        FoodProduct cannedPeaches = new FoodProduct("Canned peaches", 8, new Date(1570226400000L), 20);
+        
+        //Adding items to db
+        
+        database.addProduct(brush);
+        database.addProduct(toilet);
+        System.out.println("After adding Nonfood items");
+        
+        
+        System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", "Todays assignment");
     }
-
-    void task2() {
-
-    }
-
-    void task3() {
-
-    }
-
 }
