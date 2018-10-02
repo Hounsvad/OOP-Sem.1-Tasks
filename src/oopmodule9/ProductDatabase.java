@@ -21,8 +21,9 @@ public class ProductDatabase {
         this(1);
     }
 
-    public ProductDatabase(int initialDatabaseSize) {
-        this.list = new Product[initialDatabaseSize];
+    public ProductDatabase(int initialListLength) {
+        this.list = new Product[initialListLength];
+        this.initialListLength = initialListLength;
     }
 
     public boolean addProduct(Product product) {
@@ -50,20 +51,22 @@ public class ProductDatabase {
             for (int i = foundIndex; i < this.list.length - 1; i++) {
                 this.list[i] = this.list[i + 1];
             }
-            
-            this.list = Arrays.copyOf(this.list, this.list.length-1);
+            if (this.initialListLength < list.length) {
+                this.list = Arrays.copyOf(this.list, this.list.length - 1);
+            }
             return true;
         }
         return false;
     }
-    
-    public double productDatabase(){
+
+    public double productDatabase() {
         double sum = 0;
-        for(Product product : this.list){
+        for (Product product : this.list) {
             sum += product.getItemPrice();
         }
         return sum;
     }
+
     @Override
     public String toString() {
 
