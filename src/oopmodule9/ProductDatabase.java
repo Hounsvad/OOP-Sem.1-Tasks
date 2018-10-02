@@ -64,7 +64,8 @@ public class ProductDatabase {
         }
         return false;
     }
-        public boolean removeProduct(String itemName) {
+
+    public boolean removeProduct(String itemName) {
         int foundIndex = -1;
         for (int i = 0; i < this.list.length; i++) {
             if (this.list[i] != null) {

@@ -10,6 +10,7 @@ package oopmodule9;
  * @author Pinnacle F
  */
 public class Product {
+
     public static int lastItemID = 0;
     private int itemID;
     private final String itemName;
@@ -26,7 +27,7 @@ public class Product {
     }
 
     public void setItemPrice(double itemPrice) {
-        if(itemPrice > 0){
+        if (itemPrice > 0) {
             this.itemPrice = itemPrice;
         }
     }
