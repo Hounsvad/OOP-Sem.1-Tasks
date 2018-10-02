@@ -38,7 +38,7 @@ public class FoodProduct extends Product{
     
     @Override
     public String toString(){
-        String result = String.format("%s%n%-15s:", this.getItemName(), "Expiration date");
+        String result = String.format("%s%n%-15s:%s", this.getItemName(), "Expiration date", this.expirationDate.toString());
         return result;
     }
 }

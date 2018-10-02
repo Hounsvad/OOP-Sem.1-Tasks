@@ -64,6 +64,27 @@ public class ProductDatabase {
         }
         return false;
     }
+        public boolean removeProduct(String itemName) {
+        int foundIndex = -1;
+        for (int i = 0; i < this.list.length; i++) {
+            if (this.list[i] != null) {
+                if (this.list[i].getItemName().equalsIgnoreCase(itemName)) {
+                    foundIndex = i;
+                }
+            }
+        }
+        if (foundIndex != -1) {
+
+            for (int i = foundIndex; i < this.list.length - 1; i++) {
+                this.list[i] = this.list[i + 1];
+            }
+            if (this.initialListLength < list.length) {
+                this.list = Arrays.copyOf(this.list, this.list.length - 1);
+            }
+            return true;
+        }
+        return false;
+    }
 
     public double productDatabase() {
         double sum = 0;
@@ -81,10 +102,13 @@ public class ProductDatabase {
         }
         return null;
     }
-    public Product getProduct(String itemName){
-        for (Product list1 : this.list) {
-            if (list1 != null || list1.getItemName().equals(itemName.toLowerCase())) {
-                return list1;
+
+    public Product getProduct(String itemName) {
+        for (Product product : this.list) {
+            if (product != null) {
+                if (product.getItemName().equalsIgnoreCase(itemName) == true) {
+                    return product;
+                }
             }
         }
         return null;

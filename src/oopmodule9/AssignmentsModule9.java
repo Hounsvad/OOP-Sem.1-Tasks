@@ -56,7 +56,11 @@ public class AssignmentsModule9 {
         System.out.println(database.toString());
         
         //showing brush contents
-        database.getProduct("wetbrush");
+        System.out.println("Testing toString methods");
+        System.out.println(database.getProduct("wetbrush").toString());
+        
+        //showing cup noodles contents
+        System.out.println(database.getProduct("cup noodles").toString());
         System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", "Todays assignment");
     }
 }

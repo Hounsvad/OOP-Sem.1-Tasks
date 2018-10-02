@@ -5,7 +5,6 @@
  */
 package oopmodule9;
 
-import com.sun.corba.se.impl.oa.toa.TOA;
 import java.util.Arrays;
 
 /**
@@ -38,7 +37,7 @@ public class NonfoodProduct extends Product {
     public boolean removeFromMaterialList(String material) {
         int foundIndex = -1;
         for (int i = 0; i < this.materialList.length; i++) {
-            if (material.toLowerCase() == null ? false : material.toLowerCase().equals(this.materialList[i].toLowerCase())) {
+            if (material.toLowerCase() == null ? false : material.equalsIgnoreCase(this.materialList[i])) {
                 foundIndex = i;
                 break;
             }
@@ -54,7 +53,7 @@ public class NonfoodProduct extends Product {
 
     public boolean containsMaterial(String material) {
         for (String _material : this.materialList) {
-            if (_material.toLowerCase() == null ? false : _material.toLowerCase().equals(material.toLowerCase())) {
+            if (_material.toLowerCase() == null ? false : _material.equalsIgnoreCase(material)) {
                 return true;
             }
         }
@@ -67,6 +66,7 @@ public class NonfoodProduct extends Product {
         for (int i = 0; i < this.materialList.length; i++) {
             result = result + "* " + materialList[i] + (i == this.materialList.length - 1 ? "" : "%n");
         }
+        result = String.format(result);
         return result;
     }
 

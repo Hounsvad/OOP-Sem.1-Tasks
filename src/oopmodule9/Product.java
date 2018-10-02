@@ -17,7 +17,7 @@ public class Product {
 
     public Product(String itemName, double itemPrice) {
         this.itemID = ++lastItemID;
-        this.itemName = itemName.toLowerCase();
+        this.itemName = itemName;
         this.itemPrice = itemPrice;
     }
 
