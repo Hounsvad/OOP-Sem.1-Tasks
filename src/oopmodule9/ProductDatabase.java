@@ -97,7 +97,11 @@ public class ProductDatabase {
         }
         return sum;
     }
-
+    /**
+     * Returns a product 
+     * @param itemID
+     * @return 
+     */
     public Product getProduct(int itemID) {
         for (Product product : this.list) {
             if (product != null || product.getItemID() == itemID) {
@@ -106,7 +110,7 @@ public class ProductDatabase {
         }
         return null;
     }
-
+    
     public Product getProduct(String itemName) {
         for (Product product : this.list) {
             if (product != null) {
@@ -118,6 +122,10 @@ public class ProductDatabase {
         return null;
     }
 
+    /**
+     * Returns a string containing a list of all items in the database
+     * @return a string containing all items in list form
+     */
     @Override
     public String toString() {
         String result = String.format("%-25s%-25s%-25s%n", "Items", "Item id", "Item price");
