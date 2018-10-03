@@ -71,6 +71,7 @@ public class ProductDatabase {
             if (this.list[i] != null) {
                 if (this.list[i].getItemName().equalsIgnoreCase(itemName)) {
                     foundIndex = i;
+                    break;
                 }
             }
         }
