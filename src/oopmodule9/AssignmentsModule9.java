@@ -5,7 +5,6 @@
  */
 package oopmodule9;
 
-import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -52,13 +51,14 @@ public class AssignmentsModule9 {
         System.out.println(database.toString());
 
         //Adding new product
+        database.addProduct(toilet);
         database.addProduct(new FoodProduct("Cup noodles", 1.25d, new Date(1664920800000L), 25));
         System.out.println("After adding cup noodles");
         System.out.println(database.toString());
 
         //showing brush contents
         System.out.println("Testing toString methods");
-        System.out.println(database.getProduct("wetbrush").toString());
+        System.out.println(database.getProduct("Shitomatron 5000").toString());
 
         //showing cup noodles contents
         System.out.println(database.getProduct("cup noodles").toString());
