@@ -6,7 +6,6 @@
 package oopmodule9;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -33,10 +32,7 @@ public class FoodProduct extends Product {
     }
 
     public boolean isExpired(Date comparedDate) {
-        if (comparedDate.getTime() > this.expirationDate.getTime()) {
-            return true;
-        }
-        return false;
+        return comparedDate.getTime() > this.expirationDate.getTime();
     }
 
     @Override
