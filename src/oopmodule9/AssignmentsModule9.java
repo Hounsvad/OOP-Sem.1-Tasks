@@ -62,9 +62,11 @@ public class AssignmentsModule9 {
 
         //showing cup noodles contents
         System.out.println(database.getProduct("cup noodles").toString());
-        
-        //System.out.println(database.getProduct("squash").isExpired(new Date(System.currentTimeMillis())));
-        
+
+        if (database.getProduct("squash") instanceof FoodProduct) {
+            FoodProduct product = (FoodProduct) database.getProduct("squash");
+            System.out.println(product.isExpired(new Date(System.currentTimeMillis())));
+        }
         System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", "Todays assignment");
     }
 }

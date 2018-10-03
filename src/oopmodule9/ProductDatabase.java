@@ -108,13 +108,15 @@ public class ProductDatabase {
         for (Product product : this.list) {
             if (product != null) {
                 if (product.getItemName().equalsIgnoreCase(itemName) == true) {
-                    return product;
+                    return (NonfoodProduct)product;
                 }
             }
         }
         return null;
     }
 
+    
+    
     @Override
     public String toString() {
         String result = String.format("%-25s%-25s%-25s%n", "Items", "Item id", "Item price");
