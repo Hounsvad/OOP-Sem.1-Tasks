@@ -65,8 +65,10 @@ public class AssignmentsModule9 {
 
         if (database.getProduct("squash") instanceof FoodProduct) {
             FoodProduct product = (FoodProduct) database.getProduct("squash");
-            System.out.println(product.isExpired(new Date(System.currentTimeMillis())));
+            System.out.println("The squash is " + (product.isExpired(new Date(System.currentTimeMillis())) ? "expired" : "still good"));
         }
+        
+        System.out.println("Storage value total: " + database.productDatabaseSum());
         System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", "Todays assignment");
     }
 }

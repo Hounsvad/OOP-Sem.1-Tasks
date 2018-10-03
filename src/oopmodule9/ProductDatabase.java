@@ -87,10 +87,12 @@ public class ProductDatabase {
         return false;
     }
 
-    public double productDatabase() {
+    public double productDatabaseSum() {
         double sum = 0;
         for (Product product : this.list) {
-            sum += product.getItemPrice();
+            if (product != null) {
+                sum += product.getItemPrice();
+            }
         }
         return sum;
     }
@@ -108,15 +110,13 @@ public class ProductDatabase {
         for (Product product : this.list) {
             if (product != null) {
                 if (product.getItemName().equalsIgnoreCase(itemName) == true) {
-                    return (NonfoodProduct)product;
+                    return product;
                 }
             }
         }
         return null;
     }
 
-    
-    
     @Override
     public String toString() {
         String result = String.format("%-25s%-25s%-25s%n", "Items", "Item id", "Item price");
