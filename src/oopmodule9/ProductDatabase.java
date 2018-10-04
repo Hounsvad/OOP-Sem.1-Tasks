@@ -119,16 +119,17 @@ public class ProductDatabase {
 
     @Override
     public String toString() {
-        String result = String.format("%-25s%-25s%-25s%n", "Items", "Item id", "Item price");
+        StringBuilder resultStringBuilder = new StringBuilder();
+        resultStringBuilder.append(String.format("%-25s%-25s%-25s%n", "Items", "Item id", "Item price"));
         for (Product product : this.list) {
             if (product != null) {
-                result = result + String.format(
+                resultStringBuilder.append(String.format(
                         "%-25s%-25s%-25s%n",
                         product.getItemName(),
                         product.getItemID(),
-                        product.getItemPrice());
+                        product.getItemPrice()));
             }
         }
-        return result;
+        return resultStringBuilder.toString();
     }
 }

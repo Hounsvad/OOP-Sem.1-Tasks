@@ -62,12 +62,13 @@ public class NonfoodProduct extends Product {
 
     @Override
     public String toString() {
-        String result = this.getItemName() + "%n";
+        StringBuilder resultStringBuilder = new StringBuilder();
+        //String result = 
+        resultStringBuilder.append(this.getItemName()).append("%n");
         for (int i = 0; i < this.materialList.length; i++) {
-            result = result + " * " + materialList[i] + (i == this.materialList.length - 1 ? "" : "%n");
+            resultStringBuilder.append(" * ").append(materialList[i]).append((i == this.materialList.length - 1 ? "" : "%n"));
         }
-        result = String.format(result);
-        return result;
+        return resultStringBuilder.toString();
     }
 
 }
