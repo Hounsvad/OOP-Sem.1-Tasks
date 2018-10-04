@@ -48,18 +48,13 @@ public class ProductDatabase {
             if (this.list[i] != null) {
                 if (this.list[i].getItemID() == itemID) {
                     foundIndex = i;
-
+                    break;
                 }
             }
         }
         if (foundIndex != -1) {
-
-            for (int i = foundIndex; i < this.list.length - 1; i++) {
-                this.list[i] = this.list[i + 1];
-            }
-            if (this.initialListLength < list.length) {
-                this.list = Arrays.copyOf(this.list, this.list.length - 1);
-            }
+            removeAndSort(foundIndex);
+            decrementlist();
             return true;
         }
         return false;
@@ -77,15 +72,23 @@ public class ProductDatabase {
         }
         if (foundIndex != -1) {
 
-            for (int i = foundIndex; i < this.list.length - 1; i++) {
-                this.list[i] = this.list[i + 1];
-            }
-            if (this.initialListLength < list.length) {
-                this.list = Arrays.copyOf(this.list, this.list.length - 1);
-            }
+            removeAndSort(foundIndex);
+            decrementlist();
             return true;
         }
         return false;
+    }
+
+    private void removeAndSort(int foundIndex) {
+        for (int i = foundIndex; i < this.list.length - 1; i++) {
+            this.list[i] = this.list[i + 1];
+        }
+    }
+
+    private void decrementlist() {
+        if (this.initialListLength < list.length) {
+            this.list = Arrays.copyOf(this.list, this.list.length - 1);
+        }
     }
 
     public double productDatabaseSum() {
@@ -97,10 +100,12 @@ public class ProductDatabase {
         }
         return sum;
     }
+
     /**
-     * Returns a product 
+     * Returns a product
+     *
      * @param itemID
-     * @return 
+     * @return
      */
     public Product getProduct(int itemID) {
         for (Product product : this.list) {
@@ -110,7 +115,7 @@ public class ProductDatabase {
         }
         return null;
     }
-    
+
     public Product getProduct(String itemName) {
         for (Product product : this.list) {
             if (product != null) {
@@ -124,6 +129,7 @@ public class ProductDatabase {
 
     /**
      * Returns a string containing a list of all items in the database
+     *
      * @return a string containing all items in list form
      */
     @Override
