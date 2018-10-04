@@ -11,10 +11,10 @@ package oopmodule9;
  */
 public class Product {
 
-    public static int lastItemID = 0;
-    private int itemID;
-    private final String itemName;
-    private double itemPrice;
+    protected static int lastItemID = 0;
+    protected int itemID;
+    protected final String itemName;
+    protected double itemPrice;
 
     public Product(String itemName, double itemPrice) {
         this.itemID = ++lastItemID;
