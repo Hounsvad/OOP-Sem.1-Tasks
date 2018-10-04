@@ -78,19 +78,30 @@ public class ProductDatabase {
         }
         return false;
     }
-
+    
+    /**
+     * Removes product from the database by moving all others down so as to leave no empty spaces elsewhere than the end 
+     * @param foundIndex 
+     */
     private void removeAndSort(int foundIndex) {
         for (int i = foundIndex; i < this.list.length - 1; i++) {
             this.list[i] = this.list[i + 1];
         }
     }
 
+    /**
+     * Shortens the database array by one as long as it is not below the preset limit
+     */
     private void decrementlist() {
         if (this.initialListLength < list.length) {
             this.list = Arrays.copyOf(this.list, this.list.length - 1);
         }
     }
 
+    /**
+     * The sum of the item price of all items
+     * @return the sum as a double
+     */
     public double productDatabaseSum() {
         double sum = 0;
         for (Product product : this.list) {
@@ -104,7 +115,7 @@ public class ProductDatabase {
     /**
      * Returns a product
      *
-     * @param itemID
+     * @param itemID the item id by which to return a product
      * @return
      */
     public Product getProduct(int itemID) {
@@ -115,7 +126,12 @@ public class ProductDatabase {
         }
         return null;
     }
-
+    /**
+     * Returns a product
+     *
+     * @param itemName the item name by which to return a product 
+     * @return
+     */
     public Product getProduct(String itemName) {
         for (Product product : this.list) {
             if (product != null) {
