@@ -15,8 +15,8 @@ public class NonfoodProduct extends Product {
 
     private String[] materialList;
 
-    public NonfoodProduct(String itemName, double itemPrice, String[] materialList) {
-        super(itemName, itemPrice);
+    public NonfoodProduct(String itemName, double itemPrice, int itemCount, String[] materialList) {
+        super(itemName, itemPrice, itemCount);
         this.materialList = materialList.clone();
     }
 

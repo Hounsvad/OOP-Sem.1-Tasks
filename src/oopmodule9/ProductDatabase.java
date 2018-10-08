@@ -52,6 +52,9 @@ public class ProductDatabase {
      */
     public boolean addProduct(Product product) {
         for (int i = 0; i < this.list.length; i++) {
+            if (this.list[i].itemName == product.itemName){
+                return false;
+            }
             if (this.list[i] == null) {
                 this.list[i] = product;
                 return true;

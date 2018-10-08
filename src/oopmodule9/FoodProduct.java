@@ -17,8 +17,16 @@ public class FoodProduct extends Product {
     private final Date expirationDate;
     private final int StorageTemperature;
 
-    public FoodProduct(String itemName, double itemPrice, Date expirationDate, int storageTemperature) {
-        super(itemName, itemPrice);
+    /**
+     * Constructor for a FoodProduct 
+     * @param itemName name of the item
+     * @param itemPrice price of the item
+     * @param itemCount amount of items
+     * @param expirationDate expiration date of the item
+     * @param storageTemperature storage temperature of the product
+     */
+    public FoodProduct(String itemName, double itemPrice, int itemCount, Date expirationDate, int storageTemperature) {
+        super(itemName, itemPrice, itemCount);
         this.expirationDate = expirationDate;
         this.StorageTemperature = storageTemperature;
     }

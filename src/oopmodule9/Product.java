@@ -15,12 +15,14 @@ public class Product {
     protected int itemID;
     protected final String itemName;
     protected double itemPrice;
+    protected int itemCount;
 
     @SuppressWarnings("ValueOfIncrementOrDecrementUsed")
-    public Product(String itemName, double itemPrice) {
+    public Product(String itemName, double itemPrice, int itemCount) {
         this.itemID = ++lastItemID;
         this.itemName = itemName;
         this.itemPrice = itemPrice;
+        this.itemCount = itemCount;
     }
 
     public double getItemPrice() {
@@ -39,5 +41,20 @@ public class Product {
 
     public String getItemName() {
         return itemName;
+    }
+
+    public int getItemCount() {
+        return itemCount;
+    }
+
+    /**
+     * "adds" the input to the itemCount
+     * if you whish to subtract simply add the value * -1
+     * @param value the value to be "added" 
+     * @return the new itemCount
+     */
+    public int changeItemCount(int value){
+        
+        return getItemCount();
     }
 }
