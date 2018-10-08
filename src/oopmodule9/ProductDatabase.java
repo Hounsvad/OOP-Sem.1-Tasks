@@ -16,20 +16,40 @@ public class ProductDatabase {
     private Product[] list;
     private int initialListLength = -1;
 
+    /**
+     * Constructor for ProductDatabase with a minimum size of 1
+     */
     public ProductDatabase() {
         //If nothing is specified then make the size 1
         this(1);
     }
 
+    /**
+     * Constructor for ProductDatabase
+     * The input cant be less that 1
+     * @param initialListLength the minimum size of the list as an int
+     */
     public ProductDatabase(int initialListLength) {
+        if(initialListLength < 1){
+            throw new IllegalArgumentException("The entered length is less than 1");
+        }
         this.list = new Product[initialListLength];
         this.initialListLength = initialListLength;
     }
-
+    
+    /**
+     * Returns a copy of the array list
+     * @return a copy of list as a Product[]
+     */
     public Product[] getList() {
         return list.clone();
     }
 
+    /**
+     * Adds a product to the database
+     * @param product product to be added to the database
+     * @return true if success
+     */
     public boolean addProduct(Product product) {
         for (int i = 0; i < this.list.length; i++) {
             if (this.list[i] == null) {
@@ -41,40 +61,41 @@ public class ProductDatabase {
         this.list[this.list.length] = product;
         return false;
     }
-
+    
+    /**
+     * Removes a single product based on the entered item ID
+     * The product removed is the first product in the database that matches the input
+     * @param itemID itemID of the product to be removed
+     * @return true if success 
+     */
     public boolean removeProduct(int itemID) {
-        int foundIndex = -1;
         for (int i = 0; i < this.list.length; i++) {
             if (this.list[i] != null) {
                 if (this.list[i].getItemID() == itemID) {
-                    foundIndex = i;
-                    break;
+                    removeAndSort(i);
+                    decrementlist();
+                    return true;
                 }
             }
-        }
-        if (foundIndex != -1) {
-            removeAndSort(foundIndex);
-            decrementlist();
-            return true;
         }
         return false;
     }
 
+    /**
+     * Removes a single product based on the entered item name
+     * The product removed is the first product in the database that matches the input
+     * @param itemName itemName of the product to be removed
+     * @return true if success 
+     */
     public boolean removeProduct(String itemName) {
-        int foundIndex = -1;
         for (int i = 0; i < this.list.length; i++) {
             if (this.list[i] != null) {
                 if (this.list[i].getItemName().equalsIgnoreCase(itemName)) {
-                    foundIndex = i;
-                    break;
+                    removeAndSort(i);
+                    decrementlist();
+                    return true;
                 }
             }
-        }
-        if (foundIndex != -1) {
-
-            removeAndSort(foundIndex);
-            decrementlist();
-            return true;
         }
         return false;
     }
@@ -120,7 +141,7 @@ public class ProductDatabase {
      */
     public Product getProduct(int itemID) {
         for (Product product : this.list) {
-            if (product != null || product.getItemID() == itemID) {
+            if (product != null && product.getItemID() == itemID) {
                 return product;
             }
         }
@@ -134,10 +155,8 @@ public class ProductDatabase {
      */
     public Product getProduct(String itemName) {
         for (Product product : this.list) {
-            if (product != null) {
-                if (product.getItemName().equalsIgnoreCase(itemName) == true) {
-                    return product;
-                }
+            if (product != null && product.getItemName().equalsIgnoreCase(itemName) == true) {
+                return product;
             }
         }
         return null;

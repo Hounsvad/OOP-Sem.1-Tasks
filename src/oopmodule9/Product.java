@@ -16,6 +16,7 @@ public class Product {
     protected final String itemName;
     protected double itemPrice;
 
+    @SuppressWarnings("ValueOfIncrementOrDecrementUsed")
     public Product(String itemName, double itemPrice) {
         this.itemID = ++lastItemID;
         this.itemName = itemName;
