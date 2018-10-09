@@ -6,8 +6,6 @@
 package oopmodule11;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import oopmodule11.*;
 
 /**
  *
@@ -47,7 +45,11 @@ public class ProductDatabase {
         }
         return false;
     }
-
+    
+    //This is very involentery
+    public void removeProduct(Product p){
+        list.remove(p);
+    }
     /**
      * The sum of the item price of all items
      * @return the sum as a double

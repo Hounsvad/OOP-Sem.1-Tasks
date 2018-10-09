@@ -65,11 +65,19 @@ public class NonfoodProduct extends Product {
     public String toString() {
         StringBuilder resultStringBuilder = new StringBuilder();
         //String result = 
-        resultStringBuilder.append(this.getItemName()).append("%n");
+        resultStringBuilder.append(this.getItemName()).append(String.format("%n"));
         for (int i = 0; i < this.materialList.length; i++) {
-            resultStringBuilder.append(" * ").append(materialList[i]).append((i == this.materialList.length - 1 ? "" : "%n"));
+            resultStringBuilder.append(" * ").append(materialList[i]).append(String.format(i == this.materialList.length - 1 ? "" : "%n"));
         }
         return resultStringBuilder.toString();
+    }
+    
+    @Override
+    public boolean equals(Object object) {
+        if(!(object instanceof NonfoodProduct)){
+            return false;
+        }
+        return ((NonfoodProduct)object).itemName == (this.itemName) && Arrays.equals(((NonfoodProduct)object).materialList, this.materialList);
     }
 
 }

@@ -69,6 +69,11 @@ public class AssignmentsModule11 {
             System.out.println("The squash is " + (product.isExpired(new Date(System.currentTimeMillis())) ? "expired" : "still good"));
         }
         
+        System.out.println("Printing all items \n\n");
+        for(Product product : database.getList()){
+            System.out.println(product.toString());
+        }
+        
         System.out.println("Storage value total: " + database.productDatabaseSum());
         System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", "Todays assignment");
     }
