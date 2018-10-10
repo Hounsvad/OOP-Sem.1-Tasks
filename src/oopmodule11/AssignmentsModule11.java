@@ -5,7 +5,6 @@
  */
 package oopmodule11;
 
-import oopmodule11.*;
 import java.util.Date;
 
 /**
@@ -34,7 +33,6 @@ public class AssignmentsModule11 {
         //food items
         FoodProduct squash = new FoodProduct("Squash", 15, new Date(1538517600000L), 5);
         FoodProduct cannedPeaches = new FoodProduct("Canned peaches", 8, new Date(1570226400000L), 20);
-
         //Adding items to db
         database.addProduct(brush);
         database.addProduct(toilet);

@@ -5,10 +5,8 @@
  */
 package oopmodule11;
 
-import oopmodule11.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Objects;
 
 /**
  *
@@ -19,6 +17,14 @@ public class FoodProduct extends Product {
     private final Date expirationDate;
     private final int StorageTemperature;
 
+    /**
+     * 
+     * 
+     * @param itemName
+     * @param itemPrice
+     * @param expirationDate
+     * @param storageTemperature
+     */
     public FoodProduct(String itemName, double itemPrice, Date expirationDate, int storageTemperature) {
         super(itemName, itemPrice);
         this.expirationDate = expirationDate;

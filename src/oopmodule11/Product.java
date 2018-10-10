@@ -38,6 +38,10 @@ public class Product {
         return itemID;
     }
 
+    /**
+     * Retruns itemname 
+     * @return itemName as string
+     */
     public String getItemName() {
         return itemName;
     }
