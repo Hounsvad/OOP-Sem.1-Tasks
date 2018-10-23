@@ -8,6 +8,7 @@ package oopmodules;
 import oopmodule8.AssignmentsModule8;
 import oopmodule9.AssignmentsModule9;
 import oopmodule11.AssignmentsModule11;
+import oopmodule13.AssignmentsModule13;
 
 /**
  *
@@ -25,14 +26,16 @@ public class AssignmentManager {
         AssignmentsModule5 modul5 = new AssignmentsModule5();
         AssignmentsModule6_7 modul6_7 = new AssignmentsModule6_7();
         AssignmentsModule8 modul8 = new AssignmentsModule8();
-        //AssignmentsModule9 modul9 = new AssignmentsModule9();
+        AssignmentsModule9 modul9 = new AssignmentsModule9();
         AssignmentsModule11 modul11 = new AssignmentsModule11();
+        AssignmentsModule13 modul13 = new AssignmentsModule13();
         //Calling Assignments
         //modul4.assignmentStarter();
         //modul5.assignmentStarter();
         //modul6_7.assignmentStarter();
         //modul8.assignmentStarter();
-        modul11.assignmentStarter();
+        //modul11.assignmentStarter();
+        modul13.assignmentStarter();
     }
     
 }
