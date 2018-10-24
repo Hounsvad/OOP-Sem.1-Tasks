@@ -27,23 +27,27 @@ public class AssignmentsModule13 {
         System.out.printf("---------------------|%-19s %12s|---------------------%n", "Start of assignment", "Todays assignment");
         File module13File = new File("C:\\OOPRecources\\Module13File.csv");
         String input = "1,2,red,blue";
-        PrintWriter pw = null;
+        //PrintWriter pw = null;
         Scanner r;
         if(module13File.exists()){
-            try {
-                pw = new PrintWriter(module13File);
+            try (PrintWriter pw = new PrintWriter(module13File); Scanner a = new Scanner("String")) {
                 pw.print(input);
                 pw.close();
             } catch (FileNotFoundException e) {
                 System.out.println("The file was not found.");
-                pw.close();
+                //pw.close();
             }
+            
             try {
                r = new Scanner(module13File).useDelimiter(",");
+               while(r.hasNext()) {
+                   r.next();
+               }
                System.out.println(r.nextInt());
                System.out.println(r.nextInt());
                System.out.println(r.next());
                System.out.println(r.next());
+               r.close();
             } catch (FileNotFoundException e) {
                 r = null;
                 System.out.println("The file was not found");
