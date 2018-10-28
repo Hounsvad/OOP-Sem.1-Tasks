@@ -9,7 +9,7 @@ package oopmodule14;
  *
  * @author Pinnacle F
  */
-public class Product {
+public abstract class Product {
 
     protected static int lastItemID = 0;
     protected int itemID;
@@ -37,7 +37,7 @@ public class Product {
     }
 
     /**
-     * Retruns itemname 
+     * Returns itemname 
      * @return itemName as string
      */
     public String getItemName() {
