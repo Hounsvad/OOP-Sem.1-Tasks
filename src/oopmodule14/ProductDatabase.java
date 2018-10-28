@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class ProductDatabase {
 
-    private ArrayList<Product> list = new ArrayList<Product>(); 
+    private ArrayList<Product> list = new ArrayList<>(); 
 
     public ProductDatabase() {
     }
@@ -39,7 +39,7 @@ public class ProductDatabase {
     public boolean removeProduct(String itemName) {
         for(Product product : list)
         {
-            if(product.itemName == itemName){
+            if(product.itemName.equals(itemName)){
                 return list.remove(product);
             }
         }
@@ -72,7 +72,7 @@ public class ProductDatabase {
      */
     public Product getProduct(int itemID) {
         for (Product product : this.list) {
-            if (product != null || product.getItemID() == itemID) {
+            if (product != null && product.getItemID() == itemID) {
                 return product;
             }
         }
@@ -94,7 +94,23 @@ public class ProductDatabase {
         }
         return null;
     }
-
+    
+    /**
+     *  Deletes all food products that are expired
+     */
+    public void removeExpiredFoods(){
+        for(Product product : this.list){
+            try {
+                if(product.isExpired()){
+                    removeProduct(product.itemID);
+                }
+            } catch (Exception e) {}
+        }
+    }
+    
+    
+    
+    
     /**
      * Returns a string containing a list of all items in the database
      *

@@ -7,6 +7,7 @@ package oopmodule14;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  *
@@ -61,5 +62,13 @@ public class FoodProduct extends Product {
             return false;
         }
         return ((FoodProduct)object).itemName.equals(this.itemName) && ((FoodProduct)object).expirationDate == this.expirationDate;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 53 * hash + Objects.hashCode(this.expirationDate);
+        hash = 53 * hash + this.StorageTemperature;
+        return hash;
     }
 }

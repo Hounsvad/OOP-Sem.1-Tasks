@@ -76,8 +76,14 @@ public class NonfoodProduct extends Product {
         if(!(object instanceof NonfoodProduct)){
             return false;
         }
-        return ((NonfoodProduct)object).itemName == (this.itemName) && Arrays.equals(((NonfoodProduct)object).materialList, this.materialList);
+        return ((NonfoodProduct)object).itemName.equals(this.itemName) && Arrays.equals(((NonfoodProduct)object).materialList, this.materialList);
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Arrays.deepHashCode(this.materialList);
+        return hash;
+    }
 }
  
