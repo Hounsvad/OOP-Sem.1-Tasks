@@ -21,6 +21,9 @@ public class AssignmentsModule14 {
         task();
     }
 
+    /**
+     * The assignment itself
+     */
     void task() {
         System.out.printf("---------------------|%-19s %12s|---------------------%n", "Start of assignment", "Todays assignment");
         //Creating database
