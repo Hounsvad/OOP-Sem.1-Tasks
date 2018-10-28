@@ -73,6 +73,17 @@ public class AssignmentsModule14 {
             System.out.println(product.toString());
         }
         
+        System.out.println("Test of removeExpiredFoods");
+        System.out.println("Printing all items \n\n");
+        for(Product product : database.getList()){
+            System.out.println(product.toString());
+        }
+        database.removeExpiredFoods();
+        System.out.println("Printing all items \n\n");
+        for(Product product : database.getList()){
+            System.out.println(product.toString());
+        }
+        
         System.out.println("Storage value total: " + database.productDatabaseSum());
         System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", "Todays assignment");
     }
