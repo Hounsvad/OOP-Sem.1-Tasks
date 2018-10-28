@@ -13,19 +13,43 @@ import java.util.ArrayList;
  */
 public class ProductDatabase {
 
+    /**
+     * Product database list
+     */
     private ArrayList<Product> list = new ArrayList<>(); 
 
+    /**
+     * No argument constructer, as i were forced to
+     */
     public ProductDatabase() {
     }
 
+    /**
+     * Makes a new arraylist and appends all items in the arraylist
+     * @return a deep copy of list
+     */
     public ArrayList<Product> getList() {
-        return list;
+        ArrayList<Product> result = new ArrayList<>();
+        for(Product product : this.list){
+            result.add(product);
+        }
+        return result;
     }
 
+    /**
+     * Adds a product to the database.
+     * @param product the product to be added
+     * @return true upon successfully adding the product
+     */
     public boolean addProduct(Product product) {
         return list.add(product);
     }
 
+    /**
+     * Removes a product from the database
+     * @param itemID by which to remove the product
+     * @return true upon successfully remove the product
+     */
     public boolean removeProduct(int itemID) {
         for(Product product : list)
         {
@@ -36,6 +60,11 @@ public class ProductDatabase {
         return false;
     }
 
+    /**
+     * Removes a product from the database
+     * @param itemName by which to remove the product
+     * @return true upon successfully remove the product
+     */
     public boolean removeProduct(String itemName) {
         for(Product product : list)
         {
@@ -47,9 +76,16 @@ public class ProductDatabase {
     }
     
     //This is very involentery
-    public void removeProduct(Product p){
-        list.remove(p);
+
+    /**
+     * Removes a product from the database
+     * @param p by which to remove the product
+     * @return true upon successfully remove the product
+     */
+    public boolean removeProduct(Product p){
+        return list.remove(p);
     }
+    
     /**
      * The sum of the item price of all items
      * @return the sum as a double
