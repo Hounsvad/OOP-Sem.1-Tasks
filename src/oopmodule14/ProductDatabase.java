@@ -135,17 +135,17 @@ public class ProductDatabase {
      *  Deletes all food products that are expired
      */
     public void removeExpiredFoods(){
-        ArrayList<Integer> foundItems = new ArrayList<>();
+        ArrayList<Product> foundItems = new ArrayList<>();
         for(Product product : this.list){
             try {
                 if(product.isExpired()){
                     //removeProduct(product.itemID);
-                    foundItems.add(product.itemID);
+                    foundItems.add(product);
                 }
             } catch (Exception e) {}
         }
-        for(int itemID : foundItems){
-            removeProduct(itemID);
+        for(Product product : foundItems){
+            this.list.remove(product);
         }
     }
     
