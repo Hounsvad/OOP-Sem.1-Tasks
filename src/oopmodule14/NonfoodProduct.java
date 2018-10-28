@@ -122,7 +122,7 @@ public class NonfoodProduct extends Product {
 
     /**
      * Generates hash code
-     * @return hash code based on material list
+     * @return hash code based on material list 
      */
     @Override
     public int hashCode() {
