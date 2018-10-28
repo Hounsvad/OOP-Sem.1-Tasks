@@ -38,9 +38,11 @@ public class FoodProduct extends Product {
     public int getStorageTemperature() {
         return StorageTemperature;
     }
-
-    public boolean isExpired(Date comparedDate) {
-        return comparedDate.getTime() > this.expirationDate.getTime();
+    
+    @Override
+    public boolean isExpired() {
+        Date currentDate = new Date();
+        return currentDate.getTime() > this.expirationDate.getTime();
     }
 
     @Override
@@ -58,6 +60,6 @@ public class FoodProduct extends Product {
         if(!(object instanceof FoodProduct)){
             return false;
         }
-        return ((FoodProduct)object).itemName == (this.itemName) && ((FoodProduct)object).expirationDate == this.expirationDate;
+        return ((FoodProduct)object).itemName.equals(this.itemName) && ((FoodProduct)object).expirationDate == this.expirationDate;
     }
 }

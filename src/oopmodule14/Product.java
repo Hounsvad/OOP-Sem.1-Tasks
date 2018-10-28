@@ -9,7 +9,7 @@ package oopmodule14;
  *
  * @author Pinnacle F
  */
-public abstract class Product {
+public abstract class Product implements Expireable {
 
     protected static int lastItemID = 0;
     protected int itemID;
@@ -43,4 +43,11 @@ public abstract class Product {
     public String getItemName() {
         return itemName;
     }
+
+    @Override
+    public boolean isExpired() {
+        throw new UnsupportedOperationException("Product does not support this operation");
+    }
+    
+    
 }
