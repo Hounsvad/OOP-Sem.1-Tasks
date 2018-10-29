@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -10,6 +10,7 @@ import oopmodule09.AssignmentsModule9;
 import oopmodule11.AssignmentsModule11;
 import oopmodule13.AssignmentsModule13;
 import oopmodule14.AssignmentsModule14;
+import oopmodule15.AssignmentsModule15;
 
 /**
  *
@@ -30,7 +31,8 @@ public class AssignmentManager {
         AssignmentsModule9 modul9 = new AssignmentsModule9();
         AssignmentsModule11 modul11 = new AssignmentsModule11();
         AssignmentsModule13 modul13 = new AssignmentsModule13();
-        AssignmentsModule14 modul14 = new AssignmentsModule14();        
+        AssignmentsModule14 modul14 = new AssignmentsModule14();
+        AssignmentsModule15 module15 = new AssignmentsModule15();
         //Calling Assignments
         //modul4.assignmentStarter();
         //modul5.assignmentStarter();
@@ -38,7 +40,8 @@ public class AssignmentManager {
         //modul8.assignmentStarter();
         //modul11.assignmentStarter();
         //modul13.assignmentStarter();
-        modul14.assignmentStarter();
+        //modul14.assignmentStarter();
+        module15.assignmentStarter();
     }
     
 }
