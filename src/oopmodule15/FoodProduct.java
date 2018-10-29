@@ -5,7 +5,6 @@
  */
 package oopmodule15;
 
-import oopmodule14.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
@@ -32,9 +31,13 @@ public class FoodProduct extends Product {
      * @param itemPrice The item price of the product
      * @param expirationDate The expiration date of the item
      * @param storageTemperature The storage temperature of the item
+     * @throws oopmodule15.ExpiredProductAddedException if the added product is expired
      */
-    public FoodProduct(String itemName, double itemPrice, Date expirationDate, int storageTemperature) {
+    public FoodProduct(String itemName, double itemPrice, Date expirationDate, int storageTemperature) throws ExpiredProductAddedException {
         super(itemName, itemPrice);
+        if(expirationDate.before(new Date())){
+            throw new ExpiredProductAddedException();
+        }
         this.expirationDate = expirationDate;
         this.StorageTemperature = storageTemperature;
     }

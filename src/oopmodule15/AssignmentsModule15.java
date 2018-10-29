@@ -7,6 +7,8 @@ package oopmodule15;
 
 
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,13 +20,17 @@ public class AssignmentsModule15 {
      * An assignment handler that runs the user requested task
      */
     public void assignmentStarter() {
-        task();
+        try {
+            task();
+        } catch (ExpiredProductAddedException ex) {
+            System.out.println("The user attempted to add a product that was too old");
+        }
     }
 
     /**
      * The assignment itself
      */
-    void task() {
+    void task() throws ExpiredProductAddedException {
         System.out.printf("---------------------|%-19s %12s|---------------------%n", "Start of assignment", "Todays assignment");
         //Creating database
         ProductDatabase database = new ProductDatabase();

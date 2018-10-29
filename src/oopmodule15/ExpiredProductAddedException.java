@@ -11,8 +11,11 @@ package oopmodule15;
  */
 public class ExpiredProductAddedException extends Exception{
 
+    /**
+     * Exception with the message: Attempted to add expired product to database
+     */
     public ExpiredProductAddedException() {
-        super("Attempted to add expired product ot database");
+        super("Attempted to add expired product to database");
     }
 
     public ExpiredProductAddedException(String message) {
