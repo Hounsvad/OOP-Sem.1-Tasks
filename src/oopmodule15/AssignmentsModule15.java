@@ -7,8 +7,6 @@ package oopmodule15;
 
 
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
