@@ -80,6 +80,7 @@ public class AssignmentsModule15 {
                     break;
                 case 4:
                     liang12_5();
+                    System.out.println("An illegal triangle were created and killed the program");
                     System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 default:
