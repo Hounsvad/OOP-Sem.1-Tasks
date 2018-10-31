@@ -11,6 +11,7 @@ import oopmodule11.AssignmentsModule11;
 import oopmodule13.AssignmentsModule13;
 import oopmodule14.AssignmentsModule14;
 import oopmodule15.AssignmentsModule15;
+import oopmodule16.AssignmentsModule16;
 
 /**
  *
@@ -33,6 +34,7 @@ public class AssignmentManager {
         AssignmentsModule13 modul13 = new AssignmentsModule13();
         AssignmentsModule14 modul14 = new AssignmentsModule14();
         AssignmentsModule15 module15 = new AssignmentsModule15();
+        AssignmentsModule16 module16 = new AssignmentsModule16();
         //Calling Assignments
         //modul4.assignmentStarter();
         //modul5.assignmentStarter();
@@ -41,7 +43,8 @@ public class AssignmentManager {
         //modul11.assignmentStarter();
         //modul13.assignmentStarter();
         //modul14.assignmentStarter();
-        module15.assignmentStarter();
+        //module15.assignmentStarter();
+        module16.assignmentStarter();
     }
     
 }

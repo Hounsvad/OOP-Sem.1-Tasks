@@ -5,7 +5,6 @@
  */
 package oopmodule15;
 
-
 import java.util.Date;
 import java.util.Scanner;
 
@@ -18,7 +17,7 @@ public class AssignmentsModule15 {
     /**
      * An assignment handler that runs the user requested task
      */
-    public void assignmentStarter() throws IllegalTriangleException {
+    public void assignmentStarter() {
         Scanner input = new Scanner(System.in);
         int userInputInt = -1;
         String userInputString = "";
@@ -138,69 +137,71 @@ public class AssignmentsModule15 {
             FoodProduct product = (FoodProduct) database.getProduct("squash");
             System.out.println("The squash is " + (product.isExpired() ? "expired" : "still good"));
         }
-        
+
         System.out.println("Printing all items \n\n");
-        for(Product product : database.getList()){
+        for (Product product : database.getList()) {
             System.out.println(product.toString());
         }
-        
+
         System.out.println("Test of removeExpiredFoods");
         System.out.println("Printing all items \n\n");
-        for(Product product : database.getList()){
+        for (Product product : database.getList()) {
             System.out.println(product.toString());
         }
         database.removeExpiredFoods();
         System.out.println("Printing all items \n\n");
-        for(Product product : database.getList()){
+        for (Product product : database.getList()) {
             System.out.println(product.toString());
         }
-        
+
         System.out.println("Storage value total: " + database.productDatabaseSum());
         System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", "Todays assignment");
     }
-    
-    void liang12_2(){
+
+    void liang12_2() {
         Scanner s = new Scanner(System.in);
         int userInput;
         String[] months = {
             "January", "February", "March", "April",
-            "May", "June","July", "August", "September", "October",
+            "May", "June", "July", "August", "September", "October",
             "November", "December"};
         int[] dom = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         System.out.print("Enter a number between 1 and 12: ");
         try {
             userInput = (s.hasNextInt() ? s.nextInt() : 0);
-            System.out.printf("%-10s%3d%n",months[userInput-1],dom[userInput-1]);
+            System.out.printf("%-10s%3d%n", months[userInput - 1], dom[userInput - 1]);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Wrong number");
             s.next();
         }
     }
-    void liang12_3(){
+
+    void liang12_3() {
         Scanner s = new Scanner(System.in);
         int userInput;
         String[] months = {
             "January", "February", "March", "April",
-            "May", "June","July", "August", "September", "October",
+            "May", "June", "July", "August", "September", "October",
             "November", "December"};
         int[] dom = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         System.out.print("Enter a number between 1 and 12: ");
         try {
             userInput = (s.hasNextInt() ? s.nextInt() : 0);
-            System.out.printf("%-10s%3d%n",months[userInput-1],dom[userInput-1]);
+            System.out.printf("%-10s%3d%n", months[userInput - 1], dom[userInput - 1]);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Wrong number");
             s.next();
         }
     }
-    void liang12_5() throws IllegalTriangleException{
-        System.out.println(new Triangle(1,2,3));
-        try{
-            System.out.println(new Triangle(1,2,4));
-        }catch(IllegalTriangleException e){
+
+    void liang12_5() {
+
+        try {
+            System.out.println(new Triangle(1, 2, 3));
+            System.out.println(new Triangle(1, 2, 4));
+        } catch (IllegalTriangleException e) {
             System.out.println(e.getMessage());
         }
-            
-        
+
     }
 }
