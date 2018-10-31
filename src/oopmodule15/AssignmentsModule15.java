@@ -198,9 +198,10 @@ public class AssignmentsModule15 {
         }
     }
 
-    void liang12_5() throws IllegalTriangleException {
-        System.out.println(new Triangle(1, 2, 3));
+    void liang12_5() {
+      
         try {
+            System.out.println(new Triangle(1, 2, 3));
             System.out.println(new Triangle(1, 2, 4));
         } catch (IllegalTriangleException e) {
             System.out.println(e.getMessage());
