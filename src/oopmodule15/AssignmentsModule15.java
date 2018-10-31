@@ -79,7 +79,11 @@ public class AssignmentsModule15 {
                     System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 case 4:
+                    try {
                     liang12_5();
+                    }catch(IllegalTriangleException e){
+                        System.out.println("An illegal triangle were created and killed the program");
+                    }
                     System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 default:
@@ -195,7 +199,7 @@ public class AssignmentsModule15 {
     }
 
     void liang12_5() {
-
+      
         try {
             System.out.println(new Triangle(1, 2, 3));
             System.out.println(new Triangle(1, 2, 4));
