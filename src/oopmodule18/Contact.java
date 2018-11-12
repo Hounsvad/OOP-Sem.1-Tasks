@@ -74,6 +74,11 @@ public class Contact {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    @Override
+    public String toString() {
+        return (this.sirname + ", " + this.name); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

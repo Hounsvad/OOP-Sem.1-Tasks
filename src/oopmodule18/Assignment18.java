@@ -23,10 +23,11 @@ public class Assignment18 extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDoc.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXML.fxml"));
 
-        Scene scene = new Scene(root, 600, 900);
-
+        Scene scene = new Scene(root);
+        
+        stage.setResizable(false);
         stage.setTitle("Contacts");
         stage.setScene(scene);
         stage.show();
