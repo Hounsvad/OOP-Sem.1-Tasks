@@ -1,0 +1,37 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package oopmodule19.simplethreelayer.presentation;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.TextField;
+import oopmodule19.simplethreelayer.interfaces.IStudentIndex;
+
+/**
+ *
+ * @author Anders
+ */
+class ButtonEventHandler implements EventHandler<ActionEvent> {
+
+    private final IStudentIndex sdb;
+    private final TextField txtAge;
+    private final TextField txtName;
+
+
+    ButtonEventHandler(IStudentIndex sdb, TextField txtName, TextField txtAge) {
+        this.sdb = sdb;
+        this.txtName = txtName;
+        this.txtAge = txtAge;
+    }
+
+    @Override
+    public void handle(ActionEvent event) {
+        String studentName = txtName.getText();
+        int studentAge = Integer.parseInt(txtAge.getText());
+        sdb.addStudent(studentName, studentAge);
+    }
+
+}
