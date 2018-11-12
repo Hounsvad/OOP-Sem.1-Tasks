@@ -9,6 +9,9 @@ package oopmodule17;
  *
  * @author Hounsvad
  */
+import oopmodule17.chapter2.Chapter2;
+import oopmodule17.chapter4.Chapter4;
+import oopmodule17.chapter1.Chapter1;
 import java.util.Scanner;
 public class AssignmentsModule17{
 
@@ -62,11 +65,13 @@ public class AssignmentsModule17{
                     System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 case 2:
-                    Chapter2.begin();
+                    Chapter2 c2 = new Chapter2();
+                    c2.begin();
                     System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 case 3:
-                    Chapter4.begin();
+                    Chapter4 c4 = new Chapter4();
+                    c4.begin();
                     System.out.printf("---------------------|%-19s %12s|---------------------%n", "End of assignment", assignments[userInputInt - 1]);
                     break;
                 default:
